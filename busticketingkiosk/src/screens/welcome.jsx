@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
-const WelcomeScreen = (props) => {
+const WelcomeScreen = ({setPageTitle}) => {
+
+    useEffect(() => {
+        setPageTitle("Welcome")
+    },[])
+
     return (
         <div>
-            Hello Welcome
+            Text here
         </div>
     )
 };
