@@ -7,6 +7,8 @@ import EnglishLanguageLogo from './assets/images/EnglishCanadaLogo.svg';
 import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import FrenchLogo from './assets/images/FrenchLogo.svg';
+import DashboardScreen from './screens/Dashboard';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
     alert ('All pages need to be translated to French')
   }
   return (
+    <Router>
     <div className='parent-container'>
       <div className="svg-container">
           {/* <CityOfCalgary/> */}
@@ -33,10 +36,12 @@ function App() {
             
           {/* </div> */}
       </div>
-      <HomeScreen style={{display: "flex", alignItems: "center"}}>
-      <WelcomeScreen setPageTitle={setPageTitle} />
-    </HomeScreen>
+      <Routes>
+          <Route path="/" element={<HomeScreen><WelcomeScreen setPageTitle={setPageTitle} /></HomeScreen>} />
+          <Route path="/dashboard" element={<DashboardScreen setPageTitle={setPageTitle} />} />
+        </Routes>
   </div>
+  </Router>
   );
 }
 
