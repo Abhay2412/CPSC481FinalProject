@@ -3,45 +3,50 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HomeScreen from './screens/Home';
 import CityOfCalgary from "./assets/images/CityOfCalgary.svg"
 import WelcomeScreen from './screens/Welcome';
-import EnglishLanguageLogo from './assets/images/EnglishCanadaLogo.svg';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import FrenchLogo from './assets/images/FrenchLogo.svg';
 import DashboardScreen from './screens/Dashboard';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SelectTicketsScreen from './screens/SelectTickets';
+import MakePaymentScreen from './screens/MakePayment';
 
+export const TicketCountContext = React.createContext();
 
 function App() {
-
+  const [ticketCounts, setTicketCounts] = React.useState({ Senior: 0, Adult: 0, Youth: 0, Child: 0 });
   const [pageTitle, setPageTitle] = useState("");
+  
   const handleEnglishSwitch = () => {
     alert('All pages need to be translated to English')
   }
+
   const handleFrenchSwitch = () => {
     alert ('All pages need to be translated to French')
   }
+
   return (
     <Router>
-    <div className='parent-container'>
-      <div className="svg-container">
-          {/* <CityOfCalgary/> */}
-          {/* <div style={{alignItems: "end",justifyContent: "flex-end"}}> */}
-            <img className='svg-left' src={CityOfCalgary} alt='City Of Calgary'/> 
-            <div>{pageTitle}</div>
-            <div className='svg-right'>
-            <Button onClick={handleEnglishSwitch}>EN</Button>
-            <Button onClick={handleFrenchSwitch}>FR</Button>
-            <Button variant="outline-danger">Help</Button>
-            </div>
-            
-          {/* </div> */}
+      <div className='parent-container'>
+        <div className="svg-container">
+          <img className='svg-left' src={CityOfCalgary} alt='City Of Calgary'/> 
+          <div>{pageTitle}</div>
+          <div className='svg-right'>
+            <Button onClick={handleEnglishSwitch} className='navbar-buttons'>EN</Button>
+            <Button onClick={handleFrenchSwitch} className='navbar-buttons'>FR</Button>
+            <Button variant="outline-danger" className='navbar-buttons'>Help</Button>
+          </div>
+        </div>
+        
+        <TicketCountContext.Provider value={{ ticketCounts, setTicketCounts }}>
+          <Routes>
+            <Route path="/" element={<HomeScreen><WelcomeScreen setPageTitle={setPageTitle} /></HomeScreen>} />
+            <Route path="/dashboard" element={<DashboardScreen setPageTitle={setPageTitle} />} />
+            <Route path="/tickets" element={<SelectTicketsScreen setPageTitle={setPageTitle} />} />
+            <Route path="/payment" element={<MakePaymentScreen setPageTitle={setPageTitle} />} />
+          </Routes>
+        </TicketCountContext.Provider>
       </div>
-      <Routes>
-          <Route path="/" element={<HomeScreen><WelcomeScreen setPageTitle={setPageTitle} /></HomeScreen>} />
-          <Route path="/dashboard" element={<DashboardScreen setPageTitle={setPageTitle} />} />
-        </Routes>
-  </div>
-  </Router>
+    </Router>
   );
 }
 

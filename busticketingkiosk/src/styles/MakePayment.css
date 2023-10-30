@@ -1,0 +1,9 @@
+.button-light-red {
+    background-color: #F0BDBA; 
+    color: #0c0c0c;
+    margin-top: 50px;
+}
+
+.button-light-red:hover {
+    background-color: #800e08; 
+}
