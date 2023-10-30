@@ -2,6 +2,10 @@
   background-color: white;
 }
 
+.navbar-buttons {
+  margin-right: 5px;
+}
+
 .parent-container {
   display: flex; /* Display items vertically */
   flex-direction: column; /* Arrange items from top to bottom */
