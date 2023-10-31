@@ -63,7 +63,7 @@ const MakePaymentScreen = ({setPageTitle}) => {
         <Row className="buttons-row">
             <Col>
                 <Button className="button button-light-red" block onClick={() => navigate('/tickets')} >Cancel Purchase</Button>
-                <Button className="button button-light-red" block onClick={() => navigate('/paymentSuccessful')} >Purchase Tickets</Button>
+                <Button className="button button-light-green" block onClick={() => navigate('/paymentSuccessful')} >Purchase Tickets</Button>
             </Col>
         </Row>
     </Container>
