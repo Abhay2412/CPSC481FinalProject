@@ -80,7 +80,7 @@ const MoreInfo = (props) => {
                 <Col>
                 <div style={{display: "flex", flexDirection: "column"}}>
                         <div>
-                            Saturda-Sunday
+                            Saturday-Sunday
                         </div>
                         <div>
                             Every 45 minutes
