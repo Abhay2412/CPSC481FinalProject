@@ -96,7 +96,7 @@ const DashboardScreen = ({setPageTitle}) => {
                 <Col>
                     <div className="buttons-group">
                         <Button className="button button-lightblue" block onClick={() => navigate('/tickets')}>Purchase Ticket</Button>
-                        <Button className="button button-lightblue" block onClick={() => navigate('/routeinfo')}>Route Information</Button>
+                        <Button className="button button-lightblue" block onClick={() => navigate('/routeInformation')}>Route Information</Button>
                     </div>
                 </Col>
                 <Col>

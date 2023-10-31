@@ -9,6 +9,9 @@ import DashboardScreen from './screens/Dashboard';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SelectTicketsScreen from './screens/SelectTickets';
 import MakePaymentScreen from './screens/MakePayment';
+import SuccessfulPurchaseScreen from './screens/successfulPurchaseScreen';
+import RouteInformation from './screens/routeInformation';
+import MoreInfo from './screens/moreInfo';
 
 export const TicketCountContext = React.createContext();
 
@@ -43,6 +46,9 @@ function App() {
             <Route path="/dashboard" element={<DashboardScreen setPageTitle={setPageTitle} />} />
             <Route path="/tickets" element={<SelectTicketsScreen setPageTitle={setPageTitle} />} />
             <Route path="/payment" element={<MakePaymentScreen setPageTitle={setPageTitle} />} />
+            <Route path='/paymentSuccessful' element={<SuccessfulPurchaseScreen setPageTitle={setPageTitle}/>}/>
+            <Route path='/routeInformation' element={<RouteInformation setPageTitle={setPageTitle}/>}/>
+            <Route path='/moreInfo' element={<MoreInfo setPageTitle={setPageTitle}/>}/>
           </Routes>
         </TicketCountContext.Provider>
       </div>
