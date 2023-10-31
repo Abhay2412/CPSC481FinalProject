@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button, Table } from 'react-bootstrap';
 import DashboardImage from '../assets/images/DashboardYellowBus.svg'
 import '../styles/Dashboard.css';
+import { useNavigate } from 'react-router-dom';
 
 const DashboardScreen = ({setPageTitle}) => {
+    const navigate = useNavigate();
     const [weatherData, setWeatherData] = useState(null);
     const [currentTime, setCurrentTime] = useState(new Date());
     const API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
@@ -93,14 +95,14 @@ const DashboardScreen = ({setPageTitle}) => {
             <Row className="buttons-row">
                 <Col>
                     <div className="buttons-group">
-                        <Button className="button button-lightblue" block>Purchase Ticket</Button>
-                        <Button className="button button-lightblue" block>Route Information</Button>
+                        <Button className="button button-lightblue" block onClick={() => navigate('/tickets')}>Purchase Ticket</Button>
+                        <Button className="button button-lightblue" block onClick={() => navigate('/routeinfo')}>Route Information</Button>
                     </div>
                 </Col>
                 <Col>
                     <div className="buttons-group-bottom">
-                        <Button className="button button-light-orange" block>Refund</Button>
-                        <Button className="button button-lightcoral" block>Cancel</Button>
+                        <Button className="button button-light-orange" block onClick={() => navigate('/refund')}>Refund</Button>
+                        <Button className="button button-lightcoral" block onClick={() => navigate('/')}>Cancel</Button>
                     </div>
                 </Col>
             </Row>

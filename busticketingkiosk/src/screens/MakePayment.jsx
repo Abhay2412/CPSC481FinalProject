@@ -49,7 +49,7 @@ const MakePaymentScreen = ({setPageTitle}) => {
                 {Object.keys(ticketCounts).map(ticketType => (
                     ticketCounts[ticketType] > 0 && (
                         <p key={ticketType}>
-                            {ticketType} x {ticketCounts[ticketType]} = ${ticketPrices[ticketType] * ticketCounts[ticketType]}
+                            {ticketType} x {ticketCounts[ticketType]} = ${(ticketPrices[ticketType] * ticketCounts[ticketType]).toFixed(2)}
                         </p>
                     )
                 ))}
