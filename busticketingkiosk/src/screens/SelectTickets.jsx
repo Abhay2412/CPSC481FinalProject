@@ -89,7 +89,7 @@ const SelectTicketsScreen = ({setPageTitle}) => {
                         <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')} >Return to Dashboard</Button>
                         <Button className="button button-light-green" block onClick={() => navigate('/payment')} disabled={!selectedRoute}>Next</Button>
                     </Col>
-                </Row>
+            </Row>
             </Container>
         </TicketCountContext.Provider>
       );

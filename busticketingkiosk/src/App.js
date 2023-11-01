@@ -12,6 +12,8 @@ import MakePaymentScreen from './screens/MakePayment';
 import SuccessfulPurchaseScreen from './screens/successfulPurchaseScreen';
 import RouteInformation from './screens/routeInformation';
 import MoreInfo from './screens/moreInfo';
+import RefundScreen from './screens/refund';
+import RefundConfirmation from './screens/refundConfirmation';
 
 export const TicketCountContext = React.createContext();
 
@@ -49,6 +51,8 @@ function App() {
             <Route path='/paymentSuccessful' element={<SuccessfulPurchaseScreen setPageTitle={setPageTitle}/>}/>
             <Route path='/routeInformation' element={<RouteInformation setPageTitle={setPageTitle}/>}/>
             <Route path='/moreInfo' element={<MoreInfo setPageTitle={setPageTitle}/>}/>
+            <Route path='/refund' element={<RefundScreen setPageTitle={setPageTitle}/>}/>
+            <Route path='/refundConfirmation' element={<RefundConfirmation setPageTitle={setPageTitle}/>}/>
           </Routes>
         </TicketCountContext.Provider>
       </div>
