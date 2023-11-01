@@ -14,7 +14,7 @@ import RouteInformation from './screens/routeInformation';
 import MoreInfo from './screens/moreInfo';
 import RefundScreen from './screens/refund';
 import RefundConfirmation from './screens/refundConfirmation';
-
+import HelpModal from './components/HelpModal';
 export const TicketCountContext = React.createContext();
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
           <div className='svg-right'>
             <Button onClick={handleEnglishSwitch} className='navbar-buttons'>EN</Button>
             <Button onClick={handleFrenchSwitch} className='navbar-buttons'>FR</Button>
-            <Button variant="outline-danger" className='navbar-buttons'>Help</Button>
+            <HelpModal />
           </div>
         </div>
         
