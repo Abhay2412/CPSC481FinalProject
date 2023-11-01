@@ -35,7 +35,7 @@ const RefundScreen = (props) => {
             <Row>
                 <Col>
                     <div className="">
-                        <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')} >Return to Dashboard</Button>
+                        <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')} >Dashboard</Button>
                         <Button className="button button-light-green" block onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation(); 
