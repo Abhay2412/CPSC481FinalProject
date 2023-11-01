@@ -34,12 +34,14 @@ const RefundScreen = (props) => {
             </Row>
             <Row>
                 <Col>
-                    <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')} >Return to Dashboard</Button>
-                    <Button className="button button-light-green" block onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation(); 
-                        refundReferenceNumber.length < 5 && !inputElementError && setinputElementError(true); 
-                        refundReferenceNumber.length >= 5 && navigate('/refundConfirmation',{state: {refundReferenceNumber}})}}>Next</Button>
+                    <div className="">
+                        <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')} >Return to Dashboard</Button>
+                        <Button className="button button-light-green" block onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation(); 
+                            refundReferenceNumber.length < 5 && !inputElementError && setinputElementError(true); 
+                            refundReferenceNumber.length >= 5 && navigate('/refundConfirmation',{state: {refundReferenceNumber}})}}>Next</Button>
+                    </div>
                 </Col>
             </Row>
         </Container>
