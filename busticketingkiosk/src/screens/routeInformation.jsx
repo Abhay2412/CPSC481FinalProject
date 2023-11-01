@@ -41,7 +41,7 @@ const RouteInformation = (props) => {
     const handleRouteChange = (route) => { setSelectedRoute(route); setRouteNumber(routeData[route].routeNumber); setNextDeparture(routeData[route].nextDeparture); setDuration(routeData[route].duration); setNumberOfStops(routeData[route].numberOfStops) };
 
     return (
-        <Container className="mt-5">
+        <Container className="mt-4">
             <Row className="justify-content-center">
                 <Col md={5}>
                     <div className="mb-5 d-flex align-items-center">

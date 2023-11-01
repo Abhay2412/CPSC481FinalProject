@@ -7,7 +7,7 @@ import RefundsCanBeProcessedIcon from "../assets/images/RefundsCanBeProcessedIco
 const SuccessfulPurchaseScreen = (props) => {
     const navigate = useNavigate();
     return (
-        <Container>
+        <Container className="mt-4">
             <div style={{display: "flex", justifyContent: "space-between"}}>
                 <div style={{display: "flex", margin: "40px", marginTop: "70px", flexBasis: "50%"}}>
                     <div style={{display: "flex",flexDirection: "column"}}>
@@ -26,7 +26,7 @@ const SuccessfulPurchaseScreen = (props) => {
             </div>
             <Row className="buttons-row">
                 <Col>
-                    <Button style={{width: "200px", margin: "auto"}} className="button button-light-grey" block onClick={() => navigate('/')} >Return to Menu</Button>
+                    <Button style={{width: "200px", margin: "auto"}} className="button button-light-grey" block onClick={() => navigate('/')} >Return to Dashboard</Button>
                 </Col>
             </Row>
         </Container>

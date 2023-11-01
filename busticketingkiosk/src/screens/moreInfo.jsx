@@ -21,7 +21,7 @@ const MoreInfo = (props) => {
     }
 
     return (
-        <Container className="mt-5" style={{fontFamily: "Ariel, sans-serif"}}>
+        <Container className="mt-4" style={{fontFamily: "Ariel, sans-serif"}}>
             <Row>
                 <Col style={{fontWeight: "bold"}}>
                     Next Departures

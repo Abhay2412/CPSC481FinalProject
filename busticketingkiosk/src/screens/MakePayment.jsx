@@ -28,7 +28,7 @@ const MakePaymentScreen = ({setPageTitle}) => {
         return totalTickets;
     };
     return (
-        <Container>
+        <Container className='mt-4'>
         <Row className="justify-content-center mb-4">
             <h1>Payment</h1>
         </Row>

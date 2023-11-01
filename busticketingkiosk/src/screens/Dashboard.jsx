@@ -35,7 +35,7 @@ const DashboardScreen = ({setPageTitle}) => {
     const temperature = weatherData && weatherData.main ? `${Math.round(weatherData.main.temp)}°C`  : "Loading...";
     const feelsLikeTemperature = weatherData && weatherData.main ? `${Math.round(weatherData.main.feels_like)}°C` : "Loading...";
     return (
-        <Container className="dashboard-container">
+        <Container className="dashboard-container mt-4">
             {/* Header */}
             <Row className="header-row">
                 <Col>
