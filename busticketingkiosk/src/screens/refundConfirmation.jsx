@@ -18,15 +18,15 @@ const RefundConfirmation = (props) => {
                     {isRefundAllowed ? <div>
                         <img src={RefundAirplane} alt="Refund Confirmation logo"/>
                         <div style={{color: "green"}}>Your refund has been initiated.</div>
-                        <div>Please contact us via email or visit us in 24 hours if you  dont recieve the refund on your inital payment method</div>
+                        <div>Please contact us via 📧 email or phone 📞+1-(403)-262-1000 in 24 hours if your refund is not processed on your original payment method.</div>
                     </div> : <div className="text-danger">
-                        Your have entered an incorrect reference number. Please return to the refund to enter a correct reference number,
+                        You have entered an incorrect reference number. Please return to the refund screen to try again.
                         </div>}
                 </Col>
             </Row>
             <Row className="mt-4">
                 <Col>
-                    <Button className="button button-light-grey" block onClick={() => isRefundAllowed ? navigate('/dashboard') : navigate('/refund', {state: {refundReferenceNumber: location.state?.refundReferenceNumber}})}>{isRefundAllowed ? `Return to Dashboard` : "Return to refund screen"}</Button>
+                    <Button className="button button-light-grey" block onClick={() => isRefundAllowed ? navigate('/dashboard') : navigate('/refund', {state: {refundReferenceNumber: location.state?.refundReferenceNumber}})}>{isRefundAllowed ? `Dashboard` : "Refund"}</Button>
                 </Col>
             </Row>
         </Container>

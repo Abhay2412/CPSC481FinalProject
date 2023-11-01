@@ -27,7 +27,7 @@ const RefundScreen = (props) => {
                         </div>
                         <Form.Control value={refundReferenceNumber} placeholder="Enter reference Number" className="align-self-center" style={{width: "50%"}} onChange={(e) => {setRefundReferenceNumber(e.target.value); e.target.value.length >= 5 && setinputElementError(false)}}/>
                         <Form.Text className={`${refundReferenceNumber.length < 5 && inputElementError ? "text-danger": ""}`}>
-                            Please find reference number on the ticket. It will atleast 5 characters long
+                            Please find the reference number on the ticket. Example format: BOW145
                         </Form.Text>
                     </Form>
                 </Col>
