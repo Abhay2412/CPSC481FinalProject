@@ -34,7 +34,7 @@ const SelectTicketsScreen = ({setPageTitle}) => {
     },[]);
     return (
         <TicketCountContext.Provider value={ticketCounts}>
-            <Container className="mt-4">
+            <Container className="mt-5">
             <Row className="justify-content-center">
                 <div className="text-center mb-4">
                     <h1>Purchase Ticket</h1>

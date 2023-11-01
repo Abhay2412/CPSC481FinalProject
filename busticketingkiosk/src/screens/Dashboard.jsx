@@ -35,7 +35,7 @@ const DashboardScreen = ({setPageTitle}) => {
     const temperature = weatherData && weatherData.main ? `${Math.round(weatherData.main.temp)}°C`  : "Loading...";
     const feelsLikeTemperature = weatherData && weatherData.main ? `${Math.round(weatherData.main.feels_like)}°C` : "Loading...";
     return (
-        <Container className="dashboard-container mt-4">
+        <Container className="dashboard-container mt-5">
             {/* Header */}
             <Row className="header-row">
                 <Col>
@@ -99,7 +99,7 @@ const DashboardScreen = ({setPageTitle}) => {
                         <Button className="button button-lightblue" block onClick={() => navigate('/routeInformation')}>Route Information</Button>
                     </div>
                 </Col>
-                <Col>
+                <Col className='align-self-end'>
                     <div className="buttons-group-bottom">
                         <Button className="button button-light-orange" block onClick={() => navigate('/refund')}>Refund</Button>
                         <Button className="button button-lightcoral" block onClick={() => navigate('/')}>Cancel</Button>

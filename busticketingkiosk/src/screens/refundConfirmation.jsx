@@ -12,7 +12,7 @@ const RefundConfirmation = (props) => {
 
     const navigate = useNavigate();
     return(
-        <Container className="d-flex flex-column mt-4">
+        <Container className="d-flex flex-column mt-5">
             <Row>
                 <Col className="d-flex flex-column">
                     {isRefundAllowed ? <div>
