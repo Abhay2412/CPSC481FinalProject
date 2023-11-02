@@ -8,6 +8,11 @@ const SuccessfulPurchaseScreen = (props) => {
     const navigate = useNavigate();
     return (
         <Container className="mt-5">
+            <Row className="header-row">
+                <Col>
+                    <h1>Purchase Successful</h1>
+                </Col>
+            </Row>
             <div style={{display: "flex", justifyContent: "space-between"}}>
                 <div style={{display: "flex", margin: "40px", marginTop: "70px", flexBasis: "50%"}}>
                     <div style={{display: "flex",flexDirection: "column"}}>

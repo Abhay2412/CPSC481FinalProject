@@ -18,6 +18,11 @@ const RefundScreen = (props) => {
 
     return (
         <Container className="mt-5 d-flex flex-column" style={{fontStyle: "Ariel, sans-serif"}}>
+            <Row className="header-row">
+                <Col>
+                    <h1>Refund</h1>
+                </Col>
+            </Row>
             <Row>
                 <Col>
                     <Form className="d-flex flex-column">

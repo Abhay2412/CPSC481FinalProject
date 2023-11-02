@@ -42,6 +42,11 @@ const RouteInformation = (props) => {
 
     return (
         <Container className="mt-5">
+            <Row className="header-row">
+                <Col>
+                    <h1>Route Information</h1>
+                </Col>
+            </Row>
             <Row className="justify-content-center">
                 <Col md={5}>
                     <div className="mb-5 d-flex align-items-center">
