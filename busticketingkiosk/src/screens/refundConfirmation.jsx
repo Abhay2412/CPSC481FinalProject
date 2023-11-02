@@ -13,13 +13,19 @@ const RefundConfirmation = (props) => {
     const navigate = useNavigate();
     return(
         <Container className="d-flex flex-column mt-5">
+            <Row className="header-row">
+                <Col>
+                    {isRefundAllowed ? <h1>Refund Success</h1> : <h1>Refund Failed</h1>}
+                </Col>
+            </Row>
             <Row>
                 <Col className="d-flex flex-column">
                     {isRefundAllowed ? <div>
                         <img src={RefundAirplane} alt="Refund Confirmation logo"/>
                         <div style={{color: "green"}}>Your refund has been initiated.</div>
                         <div>Please contact us via 📧 email or phone 📞+1-(403)-262-1000 in 24 hours if your refund is not processed on your original payment method.</div>
-                    </div> : <div className="text-danger">
+                    </div> : 
+                        <div className="text-danger">
                         You have entered an incorrect reference number. Please return to the refund screen to try again.
                         </div>}
                 </Col>
