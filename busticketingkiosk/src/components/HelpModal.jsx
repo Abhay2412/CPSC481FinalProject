@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button, Modal, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import TransitOfficeImage from '../assets/images/CalgaryTransitCustomerServiceOffice.jpg';  // Replace with the path to your image
+import TransitOfficeImage from '../assets/images/CalgaryTransitCustomerServiceOffice.jpg';  
 
 const HelpModal = () => {
   const [show, setShow] = useState(false);
