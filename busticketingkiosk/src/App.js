@@ -15,6 +15,7 @@ import MoreInfo from './screens/moreInfo';
 import RefundScreen from './screens/refund';
 import RefundConfirmation from './screens/refundConfirmation';
 import HelpModal from './components/HelpModal';
+import HomeButton from './components/HomeButton';
 export const TicketCountContext = React.createContext();
 
 function App() {
@@ -36,9 +37,10 @@ function App() {
           <img className='svg-left' src={CityOfCalgary} alt='City Of Calgary'/> 
           <div>{pageTitle}</div>
           <div className='svg-right'>
+            <HomeButton/>
             <Button onClick={handleEnglishSwitch} className='navbar-buttons'>EN</Button>
             <Button onClick={handleFrenchSwitch} className='navbar-buttons'>FR</Button>
-            <HelpModal />
+            <HelpModal/>
           </div>
         </div>
         
