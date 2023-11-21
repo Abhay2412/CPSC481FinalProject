@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { BsHouseDoorFill } from 'react-icons/bs';
-import '../styles/HomeButton.css'; 
+import '../styles/HomeButton.css';
+import { useTranslation } from 'react-i18next';   
 
 const HomeButton = () => {
   const [showConfirm, setShowConfirm] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
 
   const handleConfirmClose = () => setShowConfirm(false);
   const handleConfirmShow = () => setShowConfirm(true);
@@ -27,15 +29,15 @@ const HomeButton = () => {
 
       <Modal show={showConfirm} onHide={handleConfirmClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Confirmation</Modal.Title>
+          <Modal.Title>{t('Confirmation')}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Are you sure you want to go back to the bus ticketing kiosk homepage?</Modal.Body>
+        <Modal.Body>{t('Are you sure you want to go back to the bus ticketing kiosk homepage?')}</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleConfirmClose}>
-            Cancel
+            {t('Cancel')}
           </Button>
           <Button className="custom-confirm-button" onClick={handleConfirmNavigate}>
-            Confirm
+            {t('Confirm')}
           </Button>
         </Modal.Footer>
       </Modal>

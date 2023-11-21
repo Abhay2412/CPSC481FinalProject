@@ -5,6 +5,7 @@ import DurationLogo from '../assets/images/DurationLogo.png';
 import "../styles/SelectTickets.css"
 import TicketCounter from '../components/TicketCounter';
 import { TicketCountContext } from '../App';
+import { useTranslation } from 'react-i18next';
 
 const SelectTicketsScreen = ({setPageTitle}) => {
     const navigate = useNavigate();
@@ -13,6 +14,7 @@ const SelectTicketsScreen = ({setPageTitle}) => {
     const [nextDeparture, setNextDeparture] = useState('');
     const [duration, setDuration] = useState('');
     const { ticketCounts, setTicketCounts } = useContext(TicketCountContext);
+    const { t } = useTranslation();
     const routes = ["Bowness", "Mount Pleasant", "Sandstone", "Huntington", "Killarney", "Marda Loop", "North Pointe", "Dalhousie", "City Hall", "Castleridge", "Falconridge", "Nolan Hill"]
     const routeData = {
         "Bowness": { routeNumber: "1", nextDeparture: "10:15 AM", duration: "30 minutes", numberOfStops: 13, lastDeparture: "11:15 PM"},
@@ -37,11 +39,11 @@ const SelectTicketsScreen = ({setPageTitle}) => {
             <Container className="mt-5">
             <Row className="justify-content-center">
                 <div className="text-center mb-4">
-                    <h1>Purchase Ticket</h1>
+                    <h1>{t('Purchase Ticket')}</h1>
                 </div>
                 <Col md={5}>
                 <div className="mb-5 d-flex align-items-center">
-                <span className="label-text-select-route mr-3"><b>Select Route:</b></span> 
+                <span className="label-text-select-route mr-3"><b>{t('Select Route:')}</b></span> 
                     <Dropdown alignRight>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
                     {selectedRoute || "Select a Route"}
@@ -56,13 +58,13 @@ const SelectTicketsScreen = ({setPageTitle}) => {
                     </Dropdown>
                 </div>
                 <div className="mb-3 d-flex align-items-center">
-                    <span className="label-text-departure mr-3"><b>Next Departure:</b> {nextDeparture}</span> 
+                    <span className="label-text-departure mr-3"><b>{t('Next Departure:')}</b> {nextDeparture}</span> 
                 </div>
                 <div className="mb-3 d-flex align-items-center">
-                    <span className="label-text-duration mr-3"><b>Route Number:</b> {routeNumber}</span> 
+                    <span className="label-text-duration mr-3"><b>{t('Route Number:')}</b> {routeNumber}</span> 
                 </div>
                 <div className="mb-3 d-flex align-items-center">
-                    <span className="label-text-duration  mr-3"><b>Duration:</b> {duration}</span> 
+                    <span className="label-text-duration  mr-3"><b>{t('Duration: ')}</b> {duration}</span> 
                 </div>
                 <div className="mb-3 d-flex align-items-center">
                     <img src={DurationLogo} className='duration-logo' alt='Duration Logo'></img>
@@ -86,8 +88,8 @@ const SelectTicketsScreen = ({setPageTitle}) => {
             </Row>
             <Row className="buttons-row">
                     <Col>
-                        <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')} >Return to Dashboard</Button>
-                        <Button className="button button-light-green" block onClick={() => navigate('/payment')} disabled={!selectedRoute}>Next</Button>
+                        <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')}>{t('Return to Dashboard')}</Button>
+                        <Button className="button button-light-green" block onClick={() => navigate('/payment')} disabled={!selectedRoute}>{t('Next')}</Button>
                     </Col>
             </Row>
             </Container>

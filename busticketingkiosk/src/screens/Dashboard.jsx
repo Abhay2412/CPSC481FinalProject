@@ -3,11 +3,13 @@ import { Container, Row, Col, Button, Table } from 'react-bootstrap';
 import DashboardImage from '../assets/images/DashboardYellowBus.svg'
 import '../styles/Dashboard.css';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const DashboardScreen = ({setPageTitle}) => {
     const navigate = useNavigate();
     const [weatherData, setWeatherData] = useState(null);
     const [currentTime, setCurrentTime] = useState(new Date());
+    const { t } = useTranslation();
     const API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
     useEffect(() => {
@@ -39,7 +41,7 @@ const DashboardScreen = ({setPageTitle}) => {
             {/* Header */}
             <Row className="header-row">
                 <Col>
-                    <h1>Dashboard</h1>
+                <h1>{t('Dashboard')}</h1>
                 </Col>
             </Row>
             <img src={DashboardImage} alt='Yellow Bus'></img>
@@ -50,9 +52,9 @@ const DashboardScreen = ({setPageTitle}) => {
                     <Table bordered>
                         <thead>
                             <tr>
-                                <th>Arrival Time</th>
-                                <th>Route Name</th>
-                                <th>Terminal Station Gate</th>
+                                <th>{t('Arrival Time')}</th>
+                                <th>{t('Route Name')}</th>
+                                <th>{t('Terminal Station Gate')}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -83,7 +85,7 @@ const DashboardScreen = ({setPageTitle}) => {
                         </div>
                         <div className="weather-temp">
                             <span>{temperature}</span>
-                            <p>Feels Like: {feelsLikeTemperature}</p>
+                            <p>{t('Feels Like:') }{feelsLikeTemperature}</p>
                         </div>
                     </div>
                     <div className="date-details">
@@ -95,14 +97,14 @@ const DashboardScreen = ({setPageTitle}) => {
             <Row className="buttons-row">
                 <Col>
                     <div className="buttons-group">
-                        <Button className="button button-lightblue" block onClick={() => navigate('/tickets')}>Purchase Ticket</Button>
-                        <Button className="button button-lightblue" block onClick={() => navigate('/routeInformation')}>Route Information</Button>
+                        <Button className="button button-lightblue" block onClick={() => navigate('/tickets')}>{t('Purchase Ticket')}</Button>
+                        <Button className="button button-lightblue" block onClick={() => navigate('/routeInformation')}>{t('Route Information')}</Button>
                     </div>
                 </Col>
                 <Col className='align-self-end'>
                     <div className="buttons-group-bottom">
-                        <Button className="button button-light-orange" block onClick={() => navigate('/refund')}>Refund</Button>
-                        <Button className="button button-lightcoral" block onClick={() => navigate('/')}>Cancel</Button>
+                        <Button className="button button-light-orange" block onClick={() => navigate('/refund')}>{t('Refund')}</Button>
+                        <Button className="button button-lightcoral" block onClick={() => navigate('/')}>{t('Cancel')}</Button>
                     </div>
                 </Col>
             </Row>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Button, Dropdown, Container, Row, Col } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 const RouteInformation = (props) => {
     const navigate = useNavigate();
@@ -10,6 +11,7 @@ const RouteInformation = (props) => {
     const [selectedRoute, setSelectedRoute] = useState();
     const [numberOfStops, setNumberOfStops] = useState();
     const location = useLocation();
+    const { t } = useTranslation();
 
     const routeData = {
         "Bowness": { routeNumber: "1", nextDeparture: "10:15 AM", duration: "30 minutes", numberOfStops: 13, lastDeparture: "11:15 PM"},
@@ -44,13 +46,13 @@ const RouteInformation = (props) => {
         <Container className="mt-5">
             <Row className="header-row">
                 <Col>
-                    <h1>Route Information</h1>
+                    <h1>{t('Route Information')}</h1>
                 </Col>
             </Row>
             <Row className="justify-content-center">
                 <Col md={5}>
                     <div className="mb-5 d-flex align-items-center">
-                    <span className="label-text-select-route" style={{marginRight: "10px"}}><b>Select Route:</b></span>
+                    <span className="label-text-select-route" style={{marginRight: "10px"}}><b>{t('Select Route:')}</b></span>
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
                             {selectedRoute || "Select a Route"}
@@ -66,32 +68,32 @@ const RouteInformation = (props) => {
                     </div>
                     <div style={{marginTop: "30px"}}>
                         <div className="mb-3 d-flex align-items-center">
-                            <span className="label-text-select-route"><b>Route Number:</b> {routeNumber}</span> 
+                            <span className="label-text-select-route"><b>{t('Route Number:')}</b> {routeNumber}</span> 
                         </div>
                         <div className="mb-3 d-flex align-items-center">
-                            <span className="label-text-select-route"><b>Next Departure:</b> {nextDeparture}</span> 
+                            <span className="label-text-select-route"><b>{t('Next Departure:')}</b> {nextDeparture}</span> 
                         </div>
                         <div className="mb-3 d-flex align-items-center">
-                            <span className="label-text-select-route"><b>Number of Stops:</b> {numberOfStops}</span> 
+                            <span className="label-text-select-route"><b>{t('Number of Stops:')}</b> {numberOfStops}</span> 
                         </div>
                         <div className="mb-3 d-flex align-items-center">
-                            <span className="label-text-select-route"><b>Duration:</b> {duration}</span> 
+                            <span className="label-text-select-route"><b>{t('Duration: ')}</b> {duration}</span> 
                         </div>
                     </div>
                     <div>
-                        <Button className="button button-light-blue" disabled={!selectedRoute} block onClick={() => navigate('/moreInfo', {state: {selectedRoute, routeData: routeData[selectedRoute]}})} >More Info</Button>
+                        <Button className="button button-light-blue" disabled={!selectedRoute} block onClick={() => navigate('/moreInfo', {state: {selectedRoute, routeData: routeData[selectedRoute]}})} >{t('More Info')}</Button>
                     </div>
                 </Col>
                 <Col md={5}>
                     <div style={{fontFamily: "Ariel, sans-serif", fontWeight: "bold"}}>
-                        Route Map
+                        {t('Route Map')}
                     </div>
                     <img src={`/RouteMapImages/${selectedRoute}.png`} alt={selectedRoute ? `${selectedRoute} Route Map` : "No route selected"}  width="600px" />
                 </Col>
             </Row>
             <Row className="buttons-row">
                 <Col className="col-md-5">
-                    <Button style={{width: "200px"}} className="button button-light-grey" block onClick={() => navigate('/dashboard')} >Return to Dashboard</Button>
+                    <Button style={{width: "200px"}} className="button button-light-grey" block onClick={() => navigate('/dashboard')} >{t('Return to Dashboard')}</Button>
                 </Col>
             </Row>
         </Container>
