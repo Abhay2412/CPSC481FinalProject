@@ -16,19 +16,17 @@ import RefundScreen from './screens/refund';
 import RefundConfirmation from './screens/refundConfirmation';
 import HelpModal from './components/HelpModal';
 import HomeButton from './components/HomeButton';
+import { useTranslation } from 'react-i18next';
 export const TicketCountContext = React.createContext();
 
 function App() {
   const [ticketCounts, setTicketCounts] = React.useState({ Senior: 0, Adult: 0, Youth: 0, Child: 0 });
   const [pageTitle, setPageTitle] = useState("");
+  const { t, i18n } = useTranslation();
   
-  const handleEnglishSwitch = () => {
-    alert('All pages need to be translated to English')
-  }
-
-  const handleFrenchSwitch = () => {
-    alert ('All pages need to be translated to French')
-  }
+  const handleLanguageSwitch = (language) => {
+    i18n.changeLanguage(language);
+  };
 
   return (
     <Router>
@@ -38,8 +36,8 @@ function App() {
           <div>{pageTitle}</div>
           <div className='svg-right'>
             <HomeButton/>
-            <Button onClick={handleEnglishSwitch} className='navbar-buttons'>EN</Button>
-            <Button onClick={handleFrenchSwitch} className='navbar-buttons'>FR</Button>
+            <Button onClick={() => handleLanguageSwitch('en')} className='navbar-buttons'>{t('EN')}</Button>
+            <Button onClick={() => handleLanguageSwitch('fr')} className='navbar-buttons'>{t('FR')}</Button>
             <HelpModal/>
           </div>
         </div>
