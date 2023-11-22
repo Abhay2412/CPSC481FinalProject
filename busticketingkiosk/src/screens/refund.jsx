@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Form, Button } from "react-bootstrap";
+import { Col, Container, Row, Form, Button, Alert } from "react-bootstrap";
 import RefundImage from "../assets/images/RefundImage.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
@@ -8,18 +8,30 @@ const RefundScreen = (props) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [refundReferenceNumber, setRefundReferenceNumber] = useState("");
-    const [inputElementError, setinputElementError] = useState(false);
+    const [isFormatCorrect, setIsFormatCorrect] = useState(true);
     const { t } = useTranslation();
 
     useEffect(() => {
-        if(location.state?.refundReferenceNumber)
-        {
-            setRefundReferenceNumber(location.state?.refundReferenceNumber);
+        if (location.state?.refundReferenceNumber) {
+            setRefundReferenceNumber(location.state.refundReferenceNumber);
         }
-    },[])
+    }, [location.state?.refundReferenceNumber]);
+
+    const checkFormat = (input) => {
+        const regex = /^[A-Za-z]{3}[0-9]{3}$/; // Regex to check the format
+        return regex.test(input);
+    };
+
+    const handleNextClick = (e) => {
+        e.preventDefault();
+        setIsFormatCorrect(checkFormat(refundReferenceNumber));
+        if (checkFormat(refundReferenceNumber)) {
+            navigate('/refundConfirmation', { state: { refundReferenceNumber } });
+        }
+    };
 
     return (
-        <Container className="mt-5 d-flex flex-column" style={{fontStyle: "Ariel, sans-serif"}}>
+        <Container className="mt-5 d-flex flex-column" style={{ fontStyle: "Ariel, sans-serif" }}>
             <Row className="header-row">
                 <Col>
                     <h1>{t('Refund')}</h1>
@@ -28,12 +40,23 @@ const RefundScreen = (props) => {
             <Row>
                 <Col>
                     <Form className="d-flex flex-column">
+                        {!isFormatCorrect && (
+                            <Alert variant="danger">
+                                {t('You have entered an incorrect reference number. Please use a format like BOW145')}
+                            </Alert>
+                        )}
                         <div>
                             <Form.Label>{t('Reference Number')}</Form.Label>
-                            <img src={RefundImage} style={{height: 100, width: "auto", marginLeft: "50px"}} />
+                            <img src={RefundImage} style={{ height: 100, width: "auto", marginLeft: "50px" }} alt="Refund" />
                         </div>
-                        <Form.Control value={refundReferenceNumber} placeholder={t('Enter reference Number')} className="align-self-center" style={{width: "50%"}} onChange={(e) => {setRefundReferenceNumber(e.target.value); e.target.value.length >= 5 && setinputElementError(false)}}/>
-                        <Form.Text className={`${refundReferenceNumber.length < 5 && inputElementError ? "text-danger": ""}`}>
+                        <Form.Control 
+                            value={refundReferenceNumber} 
+                            placeholder={t('Enter reference Number')} 
+                            className="align-self-center" 
+                            style={{ width: "50%" }} 
+                            onChange={(e) => setRefundReferenceNumber(e.target.value)}
+                        />
+                        <Form.Text className={`${refundReferenceNumber.length < 5 && !isFormatCorrect ? "text-danger" : ""}`}>
                             {t('Please find the reference number on the ticket. Example format: BOW145')}
                         </Form.Text>
                     </Form>
@@ -43,16 +66,12 @@ const RefundScreen = (props) => {
                 <Col>
                     <div className="">
                         <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')} >{t('Dashboard')}</Button>
-                        <Button className="button button-light-green" block onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation(); 
-                            refundReferenceNumber.length < 5 && !inputElementError && setinputElementError(true); 
-                            refundReferenceNumber.length >= 5 && navigate('/refundConfirmation',{state: {refundReferenceNumber}})}}>{t('Next')}</Button>
+                        <Button className="button button-light-green" block onClick={handleNextClick}>{t('Next')}</Button>
                     </div>
                 </Col>
             </Row>
         </Container>
-    )
+    );
 };
 
-export default RefundScreen
+export default RefundScreen;

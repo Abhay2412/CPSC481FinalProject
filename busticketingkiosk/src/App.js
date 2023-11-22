@@ -13,7 +13,7 @@ import SuccessfulPurchaseScreen from './screens/successfulPurchaseScreen';
 import RouteInformation from './screens/routeInformation';
 import MoreInfo from './screens/moreInfo';
 import RefundScreen from './screens/refund';
-import RefundConfirmation from './screens/refundConfirmation';
+import RefundSuccessScreen from './screens/RefundSuccess';
 import HelpModal from './components/HelpModal';
 import HomeButton from './components/HomeButton';
 import { useTranslation } from 'react-i18next';
@@ -52,7 +52,7 @@ function App() {
             <Route path='/routeInformation' element={<RouteInformation setPageTitle={setPageTitle}/>}/>
             <Route path='/moreInfo' element={<MoreInfo setPageTitle={setPageTitle}/>}/>
             <Route path='/refund' element={<RefundScreen setPageTitle={setPageTitle}/>}/>
-            <Route path='/refundConfirmation' element={<RefundConfirmation setPageTitle={setPageTitle}/>}/>
+            <Route path='/refundConfirmation' element={<RefundSuccessScreen setPageTitle={setPageTitle}/>}/>
           </Routes>
         </TicketCountContext.Provider>
       </div>
