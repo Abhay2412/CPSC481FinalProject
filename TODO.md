@@ -6,7 +6,6 @@
 
 ## Group 02's Feedback
 - [ ] Implement if the Weather/Time are dynamically updated or not like a Last updated
-- [x] Refund screen lacks an explanation of a why a refund fails
 - [ ] "+" and "-" buttons in the Select Tickets Screen require headers or have helper text 
 - [ ] Missing a frequency of the bus in the More Information Screen
 - [ ] Route Information Screen is missing a bus schedule 
@@ -22,5 +21,6 @@
 - [x] Add Home button to the homepage on all of the screen except the Homepage
 - [x] Error notifications in the Refund screen
 - [x] Move to Vite instead of CRA for faster development
+- [x] Refund screen lacks an explanation of a why a refund fails
 
 ## Nice to haves:
