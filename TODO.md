@@ -9,6 +9,6 @@
 - [x] Implement EN/FR translation
 - [x] Add Home button to the homepage on all of the screen except the Homepage
 - [x] Error notifications in the Refund screen
+- [x] Move to Vite instead of CRA for faster development
 
 ## Nice to haves:
-- [ ] Move to Vite instead of CRA for faster development
