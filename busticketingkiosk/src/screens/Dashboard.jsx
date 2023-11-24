@@ -10,7 +10,7 @@ const DashboardScreen = ({setPageTitle}) => {
     const [weatherData, setWeatherData] = useState(null);
     const [currentTime, setCurrentTime] = useState(new Date());
     const { t } = useTranslation();
-    const API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
+    const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
     useEffect(() => {
         setPageTitle()
