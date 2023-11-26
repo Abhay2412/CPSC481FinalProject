@@ -66,7 +66,7 @@ const RefundScreen = (props) => {
                 <Col>
                     <div className="">
                         <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')} >{t('Dashboard')}</Button>
-                        <Button className="button button-light-green" block onClick={handleNextClick}>{t('Next')}</Button>
+                        <Button className="button button-light-green" block onClick={handleNextClick}>{t('Process Refund')}</Button>
                     </div>
                 </Col>
             </Row>

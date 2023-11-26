@@ -39,9 +39,6 @@ const MoreInfo = (props) => {
                 <Col>
                     {addMinutes(nextDeparture, 15)}
                 </Col>
-                <Col>
-                    {addMinutes(nextDeparture, 30)}
-                </Col>
             </Row>
             <Row className="mt-4">
                 <Col style={{fontWeight: "bold"}}>
@@ -54,10 +51,6 @@ const MoreInfo = (props) => {
                 <Col>
                     <img style={{height: 50, width: "auto"}} src={Bus2} alt="Bus 1"/>
                 </Col>
-                <Col>
-                    <img style={{height: 50, width: "auto"}} src={Bus1} alt="Bus 1"/>
-                    <img style={{height: 30, width: "auto"}} src={DisableIcon} alt="Disable Icon"/>
-                </Col>
             </Row>
             <Row className="mt-4">
                 <Col style={{fontWeight: "bold"}}>
@@ -67,7 +60,6 @@ const MoreInfo = (props) => {
                     {routeData?.lastDeparture}
                     <img src={MoonLogo} alt="Moon Logo"/>
                 </Col>
-                <Col/>
                 <Col/>
             </Row>
             <Row className="mt-4">
@@ -94,7 +86,6 @@ const MoreInfo = (props) => {
                         </div>
                     </div>
                 </Col>
-                <Col/>
             </Row>
             <div className="mt-5">
                 {t('Buses offering accessibility are identified with this icon')} 
