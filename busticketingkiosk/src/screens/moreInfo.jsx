@@ -7,7 +7,7 @@ import Bus2 from "../assets/images/Bus2.svg";
 import MoonLogo from "../assets/images/MoonIcon.svg";
 import DisableIcon from "../assets/images/DisableIcon.svg";
 
-const MoreInfo = (props) => {
+const MoreInfo = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { t } = useTranslation();
@@ -50,41 +50,6 @@ const MoreInfo = (props) => {
                 </Col>
                 <Col>
                     <img style={{height: 50, width: "auto"}} src={Bus2} alt="Bus 1"/>
-                </Col>
-            </Row>
-            <Row className="mt-4">
-                <Col style={{fontWeight: "bold"}}>
-                    {t('Last departure')}
-                </Col>
-                <Col>
-                    {routeData?.lastDeparture}
-                    <img src={MoonLogo} alt="Moon Logo"/>
-                </Col>
-                <Col/>
-            </Row>
-            <Row className="mt-4">
-                <Col style={{fontWeight: "bold"}}>
-                    {t('Bus Frequency')}
-                </Col>
-                <Col>
-                    <div style={{display: "flex", flexDirection: "column"}}>
-                        <div>
-                            {t('Monday-Friday')}
-                        </div>
-                        <div>
-                            {t('Every 15 minutes')}
-                        </div>
-                    </div>
-                </Col>
-                <Col>
-                <div style={{display: "flex", flexDirection: "column"}}>
-                        <div>
-                            {t('Saturday-Sunday')}
-                        </div>
-                        <div>
-                            {t('Every 45 minutes')}
-                        </div>
-                    </div>
                 </Col>
             </Row>
             <div className="mt-5">
