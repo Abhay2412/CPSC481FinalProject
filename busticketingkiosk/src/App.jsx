@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HomeScreen from './screens/Home';
 import CityOfCalgary from "./assets/images/CityOfCalgary.svg"
 import WelcomeScreen from './screens/Welcome';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import DashboardScreen from './screens/Dashboard';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -16,6 +16,8 @@ import RefundScreen from './screens/refund';
 import RefundSuccessScreen from './screens/RefundSuccess';
 import HelpModal from './components/HelpModal';
 import HomeButton from './components/HomeButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 export const TicketCountContext = React.createContext();
 
@@ -55,6 +57,16 @@ function App() {
             <Route path='/refundConfirmation' element={<RefundSuccessScreen setPageTitle={setPageTitle}/>}/>
           </Routes>
         </TicketCountContext.Provider>
+        <footer className="footer mt-auto py-3 bg-none">
+          <div>
+            <p className="text-muted text-center">{t('If you\'re facing immediate issues at the kiosk, press the emergency button located at the side of the kiosk. Assistance will be on the way.')}</p>
+            <p className="text-muted text-center contact-info">
+              <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" /><strong>{t('Address:')}</strong> 125 7 Ave SE, Calgary, AB T2G 5R2 <span className="mx-2">|</span>
+              <FontAwesomeIcon icon={faPhone} className="mr-2" /><strong>{t('Phone:')}</strong> +1 (403) 262-1000 <span className="mx-2">|</span>
+              <FontAwesomeIcon icon={faEnvelope} className="mr-2" /><strong>{t('Email:')}</strong> support@calgarytransit.ca
+            </p>
+          </div>
+        </footer>
       </div>
     </Router>
   );

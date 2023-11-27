@@ -22,3 +22,7 @@
 img{
   padding: 2px
 }
+
+.footer {
+  margin-top: auto; /* Pushes footer to the bottom */
+}
