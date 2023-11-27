@@ -8,7 +8,6 @@
 - [ ] "+" and "-" buttons in the Select Tickets Screen require headers or have helper text 
 - [ ] Route Information Screen is missing a bus schedule 
 - [ ] Payment Screen should incorporate a modal that when users attempt to cancel their purchase prompts them to confirm their decision to ensure that they do not accidentally cancel their purchase
-- [ ] Have the helpline details at the bottom of the screen since the Help Modal because the users may forgot about it 
 - [ ] Implement a Emergency Exit that allows users to exit the app in case of an emergency (Undo button)
 
 ## Things Done:
@@ -22,5 +21,6 @@
 - [x] Implement a purchase ticket button in the Route Information Screen
 - [x] Adding a Purchase Tickets button in the Route Information Screen
 - [x] Missing a frequency of the bus in the More Information Screen-> want to only display two upcoming buses
+- [x] Have the helpline details at the bottom of the screen since the Help Modal because the users may forgot about it 
 
 ## Nice to haves:
