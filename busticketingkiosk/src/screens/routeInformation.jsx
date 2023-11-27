@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Button, Dropdown, Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
+import "../styles/RouteInformation.css"
 
 const RouteInformation = (props) => {
     const navigate = useNavigate();
@@ -92,8 +93,11 @@ const RouteInformation = (props) => {
                 </Col>
             </Row>
             <Row className="buttons-row">
-                <Col className="col-md-5">
-                    <Button style={{width: "200px"}} className="button button-light-grey" block onClick={() => navigate('/dashboard')} >{t('Return to Dashboard')}</Button>
+                <Col>
+                    <div className="buttons-group">
+                        <Button className="button button-lightgrey" block onClick={() => navigate('/dashboard')}>{t('Dashboard')}</Button>
+                        <Button className="button button-lightblue" block onClick={() => navigate('/tickets')}>{t('Purchase Ticket')}</Button>
+                    </div>
                 </Col>
             </Row>
         </Container>

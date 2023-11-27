@@ -4,6 +4,7 @@ import PurchaseSuccesfulIcon from "../assets/images/PurchaseSuccesfulIcon.svg"
 import { useNavigate } from 'react-router-dom';
 import RefundsCanBeProcessedIcon from "../assets/images/RefundsCanBeProcessedIcon.svg"
 import { useTranslation } from 'react-i18next';
+import "../styles/SuccessfulPurchaseScreen.css"
 
 const SuccessfulPurchaseScreen = (props) => {
     const navigate = useNavigate();
@@ -33,7 +34,10 @@ const SuccessfulPurchaseScreen = (props) => {
             </div>
             <Row className="buttons-row">
                 <Col>
-                    <Button style={{width: "200px", margin: "auto"}} className="button button-light-grey" block onClick={() => navigate('/')} >{t('Return to Dashboard')}</Button>
+                    <div className="buttons-group">
+                        <Button className="button button-lightgrey" block onClick={() => navigate('/dashboard')}>{t('Dashboard')}</Button>
+                        <Button className="button button-light-orange" block onClick={() => navigate('/refund')}>{t('Refund')}</Button>
+                    </div>
                 </Col>
             </Row>
         </Container>
