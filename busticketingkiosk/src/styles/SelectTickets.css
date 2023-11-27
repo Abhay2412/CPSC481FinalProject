@@ -59,6 +59,7 @@ body {
     background-color: #e0e0e0; 
     color: #0c0c0c;
     margin-right: 900px;
+    margin-top: 50px;
 }
 
 .button-light-grey:hover{
@@ -72,4 +73,11 @@ body {
 
 .button-light-green:hover{
     background-color: #09b309; 
+}
+
+.ticket-validity-note {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #d39614; /* Or any color that fits your design */
 }
