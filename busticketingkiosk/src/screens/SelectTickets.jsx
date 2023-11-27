@@ -41,6 +41,11 @@ const SelectTicketsScreen = ({setPageTitle}) => {
                 <div className="text-center mb-4">
                     <h1>{t('Purchase Ticket')}</h1>
                 </div>
+                <Col xs={12}>
+                        <p className="ticket-validity-note">
+                            {t('Tickets are valid for 90 minutes from the time of purchase.')}
+                        </p>
+                    </Col>
                 <Col md={5}>
                 <div className="mb-5 d-flex align-items-center">
                 <span className="label-text-select-route mr-3"><b>{t('Select Route:')}</b></span> 

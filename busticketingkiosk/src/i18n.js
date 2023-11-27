@@ -32,7 +32,7 @@ const resources = {
       "Increase count": "Increase count",
       "Decrease count": "Decrease count",
       "Cancel Purchase": "Cancel Purchase",
-      "Select Route:": "Select Route;",
+      "Select Route:": "Select Route:",
       "Next Departure:": "Next Departure:",
       "Route Number:": "Route Number:",
       "Duration: ": "Duration: ",
