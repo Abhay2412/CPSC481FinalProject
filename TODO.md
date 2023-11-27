@@ -4,7 +4,6 @@
 - [ ] Adding the route number, route name to the payment screen
 
 ## Group 02's Feedback
-- [ ] Implement if the Weather/Time are dynamically updated or not like a Last updated
 - [ ] "+" and "-" buttons in the Select Tickets Screen require headers or have helper text 
 - [ ] Route Information Screen is missing a bus schedule 
 - [ ] Payment Screen should incorporate a modal that when users attempt to cancel their purchase prompts them to confirm their decision to ensure that they do not accidentally cancel their purchase
@@ -22,5 +21,6 @@
 - [x] Adding a Purchase Tickets button in the Route Information Screen
 - [x] Missing a frequency of the bus in the More Information Screen-> want to only display two upcoming buses
 - [x] Have the helpline details at the bottom of the screen since the Help Modal because the users may forgot about it 
+- [x] Implement if the Weather/Time are dynamically updated or not like a Last updated
 
 ## Nice to haves:
