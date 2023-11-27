@@ -94,7 +94,7 @@ const SelectTicketsScreen = ({setPageTitle}) => {
             <Row className="buttons-row">
                     <Col>
                         <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')}>{t('Return to Dashboard')}</Button>
-                        <Button className="button button-light-green" block onClick={() => navigate('/payment')} disabled={!selectedRoute}>{t('Next')}</Button>
+                        <Button className="button button-light-green" block onClick={() => navigate('/payment', {  state: { selectedRoute, routeNumber } })} disabled={!selectedRoute}>{t('Next')}</Button>
                     </Col>
             </Row>
             </Container>

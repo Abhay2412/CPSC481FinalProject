@@ -1,10 +1,8 @@
 ## Things left to do:
 - [ ] Add a Full Schedule in the Route Information Screen
-- [ ] Adding the route number, route name to the payment screen
 
 ## Group 02's Feedback
 - [ ] Route Information Screen is missing a bus schedule 
-- [ ] Payment Screen should incorporate a modal that when users attempt to cancel their purchase prompts them to confirm their decision to ensure that they do not accidentally cancel their purchase
 - [ ] Implement a Emergency Exit that allows users to exit the app in case of an emergency (Undo button)
 
 ## Things Done:
@@ -22,5 +20,7 @@
 - [x] Implement if the Weather/Time are dynamically updated or not like a Last updated
 - [x] "+" and "-" buttons in the Select Tickets Screen require headers or have helper text 
 - [x] Add a note in the Purchase Tickets that tickets are valid for 90 minutes 
+- [x] Payment Screen should incorporate a modal that when users attempt to cancel their purchase prompts them to confirm their decision to ensure that they do not accidentally cancel their purchase
+- [x] Adding the route number, route name to the payment screen
 
 ## Nice to haves:
