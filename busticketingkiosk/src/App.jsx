@@ -18,6 +18,7 @@ import HelpModal from './components/HelpModal';
 import HomeButton from './components/HomeButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import DetailedBusSchedule from './screens/detailedBusSchedule';
 import { useTranslation } from 'react-i18next';
 export const TicketCountContext = React.createContext();
 
@@ -55,6 +56,7 @@ function App() {
             <Route path='/moreInfo' element={<MoreInfo setPageTitle={setPageTitle}/>}/>
             <Route path='/refund' element={<RefundScreen setPageTitle={setPageTitle}/>}/>
             <Route path='/refundConfirmation' element={<RefundSuccessScreen setPageTitle={setPageTitle}/>}/>
+            <Route path='/detailedBusSchedule' element={<DetailedBusSchedule setPageTitle={setPageTitle}/>} />
           </Routes>
         </TicketCountContext.Provider>
         <footer className="footer mt-auto py-3 bg-none">

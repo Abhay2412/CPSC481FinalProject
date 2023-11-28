@@ -66,6 +66,7 @@ const resources = {
       "Please find your tickets below": "Please find your tickets below",
       "Purchase Successful": "Purchase Successful",
       "Refunds can be processed within 1 hour with reference code on ticket": "Refunds can be processed within 1 hour with reference code on ticket",
+      'The schedules are valid from Monday to Sunday.': 'The schedules are valid from Monday to Sunday.',
       //Components
       "Confirmation": "Confirmation",
       "Are you sure you want to go back to the bus ticketing kiosk homepage?": "Are you sure you want to go back to the bus ticketing kiosk homepage?",
@@ -143,7 +144,7 @@ const resources = {
         "Please find your tickets below": "Veuillez trouver vos billets ci-dessous",
         "Purchase Successful": "Achat réussi",
         "Refunds can be processed within 1 hour with reference code on ticket": "Les remboursements peuvent être traités dans l'heure avec le code de référence sur le billet",
-
+        'The schedules are valid from Monday to Sunday.':"Les horaires sont valables du lundi au dimanche.",
         //Components
         "Confirmation": "Confirmation",
         "Are you sure you want to go back to the bus ticketing kiosk homepage?": "Êtes-vous sûr de vouloir retourner à la page d'accueil du kiosque de billetterie de bus ?",
