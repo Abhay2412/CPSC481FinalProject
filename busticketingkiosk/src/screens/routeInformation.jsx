@@ -15,7 +15,7 @@ const RouteInformation = (props) => {
     const { t } = useTranslation();
 
     const routeData = {
-        "Bowness": { routeNumber: "1", nextDeparture: "10:15 AM", duration: "30 minutes", numberOfStops: 13, lastDeparture: "11:15 PM"},
+        "Bowness": { routeNumber: "1", nextDeparture: "10:15 AM", duration: "30 minutes", numberOfStops: 20, lastDeparture: "11:15 PM"},
         "Mount Pleasant": { routeNumber: "2", nextDeparture: "10:30 AM", duration: "1 hour", numberOfStops: 70, lastDeparture: "11:30 PM"},
         "Sandstone": { routeNumber: "3", nextDeparture: "10:45 AM", duration: "2 hours", numberOfStops: 80, lastDeparture: "11:15 PM" },
         "Huntington": { routeNumber: "4", nextDeparture: "11:00 AM", duration: "2 hours 50 minutes", numberOfStops: 75, lastDeparture: "11:15 PM" },
@@ -83,6 +83,7 @@ const RouteInformation = (props) => {
                     </div>
                     <div>
                         <Button className="button button-light-blue" disabled={!selectedRoute} block onClick={() => navigate('/moreInfo', {state: {selectedRoute, routeData: routeData[selectedRoute]}})} >{t('More Info')}</Button>
+                        <Button className="button button-light-blue" disabled={!selectedRoute} block onClick={() => navigate('/detailedBusSchedule', {state: {selectedRoute, routeData: routeData[selectedRoute]}})}> Detailed Bus schedule </Button>
                     </div>
                 </Col>
                 <Col md={5}>
