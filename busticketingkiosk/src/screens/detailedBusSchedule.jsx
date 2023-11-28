@@ -167,6 +167,9 @@ const DetailedBusSchedule = () => {
 
     return (
         <Styles>
+            <p className="ticket-validity-note">
+                {t('The schedules are valid from Monday to Sunday.')}
+            </p>
              <table {...getTableProps()}>
                 <thead>
                     {headerGroups.map(headerGroup => (
