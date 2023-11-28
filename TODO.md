@@ -1,12 +1,7 @@
-## Things left to do:
-- [ ] Add a Full Schedule in the Route Information Screen
-
-## Group 02's Feedback
-- [ ] Route Information Screen is missing a bus schedule 
-- [ ] Implement a Emergency Exit that allows users to exit the app in case of an emergency (Undo button)
-
 ## Things Done:
 - [x] Implement EN/FR translation
+- [x] Implement a Emergency Exit that allows users to exit the app in case of an emergency (Home button)
+- [x] Add a Full Schedule in the Route Information Screen
 - [x] Add Home button to the homepage on all of the screen except the Homepage
 - [x] Error notifications in the Refund screen
 - [x] Move to Vite instead of CRA for faster development
