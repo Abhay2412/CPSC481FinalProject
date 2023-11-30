@@ -26,9 +26,11 @@ function App() {
   const [ticketCounts, setTicketCounts] = React.useState({ Senior: 0, Adult: 0, Youth: 0, Child: 0 });
   const [pageTitle, setPageTitle] = useState("");
   const { t, i18n } = useTranslation();
-  
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'en');
+
   const handleLanguageSwitch = (language) => {
     i18n.changeLanguage(language);
+    setCurrentLanguage(language);
   };
 
   return (
@@ -39,8 +41,8 @@ function App() {
           <div>{pageTitle}</div>
           <div className='svg-right'>
             <HomeButton/>
-            <Button onClick={() => handleLanguageSwitch('en')} className='navbar-buttons'>{t('EN')}</Button>
-            <Button onClick={() => handleLanguageSwitch('fr')} className='navbar-buttons'>{t('FR')}</Button>
+            <Button onClick={() => handleLanguageSwitch('en')} className={`navbar-buttons ${currentLanguage === 'en' ? 'selected-language' : ''}`}>{t('EN')}</Button>
+            <Button onClick={() => handleLanguageSwitch('fr')} className={`navbar-buttons ${currentLanguage === 'fr' ? 'selected-language' : ''}`}>{t('FR')}</Button>
             <HelpModal/>
           </div>
         </div>

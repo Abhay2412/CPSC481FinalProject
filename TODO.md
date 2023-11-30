@@ -1,3 +1,11 @@
+## TA's Feedback: 
+- [ ] Weather Tab Placement: Consider placing the weather tab in a separate side card since it's not immediately relevant to bus information.
+- [ ] Payment Screen: Add an "edit" or "back" button for user convenience. Clarify instructions like "Follow directions on the terminal."
+- [ ] Purchase Successful Screen: Instead of just saying "tickets below," add a picture of an actual "ticket pocket" for user guidance.
+- [ ] Route Information Screen: Clarify how users access this screen. Consider moving the "number of stops" to more info and emphasizing bus interval.
+- [ ] Refund Pages: Make the help button more prominent. Include contact numbers on the page if the return fails.
+- [ ] Layout and Alignment: Requires improvement for better visual appeal and user experience.
+
 ## Things Done:
 - [x] Implement EN/FR translation
 - [x] Implement a Emergency Exit that allows users to exit the app in case of an emergency (Home button)
@@ -17,5 +25,6 @@
 - [x] Add a note in the Purchase Tickets that tickets are valid for 90 minutes 
 - [x] Payment Screen should incorporate a modal that when users attempt to cancel their purchase prompts them to confirm their decision to ensure that they do not accidentally cancel their purchase
 - [x] Adding the route number, route name to the payment screen
+- [x] Language Selection Button: Consider changing the style to make the selected language more obvious.
 
 ## Nice to haves:

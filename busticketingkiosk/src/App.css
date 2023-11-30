@@ -6,6 +6,12 @@
   margin-right: 5px;
 }
 
+button.navbar-buttons.selected-language {
+  background-color: #00397a; /* Bootstrap primary color */
+  color: white;
+  border-color: #003369;
+}
+
 .parent-container {
   display: flex; /* Display items vertically */
   flex-direction: column; /* Arrange items from top to bottom */
