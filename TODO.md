@@ -3,9 +3,15 @@
 - [ ] Payment Screen: Add an "edit" or "back" button for user convenience. Clarify instructions like "Follow directions on the terminal."
 - [ ] Purchase Successful Screen: Instead of just saying "tickets below," add a picture of an actual "ticket pocket" for user guidance.
 - [ ] Route Information Screen: Clarify how users access this screen. Consider moving the "number of stops" to more info and emphasizing bus interval.
-- [ ] Refund Pages: Make the help button more prominent. Include contact numbers on the page if the return fails.
 - [ ] Layout and Alignment: Requires improvement for better visual appeal and user experience.
 
+## Our own Heuristic Evaluation: 
+- [ ] Payment and Refund Screens: No indication of a transaction being processed after a user action, consider adding progress indicators or loading animations post-action. 
+- [ ] Purchase Ticket Screen: The system does not clearly indicate which steps have been completed in the ticket purchasing process, consider adding a progress bar or a checklist.
+- [ ] Route Information Screen: The map does indicate the user's current location. Integrate real time location tracking with a distinct marker on the map to indicate the user's current location.
+- [ ] Refund Screen: Position the Process Refund to web standards
+- [ ] Bus Schedule Screen: Introduce filters or sorting options that allow users to view the relevant bus schedules.
+ 
 ## Things Done:
 - [x] Implement EN/FR translation
 - [x] Implement a Emergency Exit that allows users to exit the app in case of an emergency (Home button)
@@ -26,5 +32,7 @@
 - [x] Payment Screen should incorporate a modal that when users attempt to cancel their purchase prompts them to confirm their decision to ensure that they do not accidentally cancel their purchase
 - [x] Adding the route number, route name to the payment screen
 - [x] Language Selection Button: Consider changing the style to make the selected language more obvious.
+- [x] Refund Pages: Make the help button more prominent. Include contact numbers on the page if the return fails.
+- [x] Purchase Successful and Refund Success: Standardize all screens to use the same heading style. 
 
 ## Nice to haves:

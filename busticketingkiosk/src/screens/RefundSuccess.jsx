@@ -12,7 +12,7 @@ const RefundConfirmation = () => {
         <Container className="d-flex flex-column mt-5">
             <Row className="header-row">
                 <Col>
-                    <h1>{t('Refund Success')}</h1>
+                    <h1>{t('Refund Successful')}</h1>
                 </Col>
             </Row>
             <Row>
