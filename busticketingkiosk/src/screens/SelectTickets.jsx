@@ -6,6 +6,7 @@ import "../styles/SelectTickets.css"
 import TicketCounter from '../components/TicketCounter';
 import { TicketCountContext } from '../App';
 import { useTranslation } from 'react-i18next';
+import ProgressBarComponent from '../components/ProgressBar';
 
 const SelectTicketsScreen = ({setPageTitle}) => {
     const navigate = useNavigate();
@@ -37,9 +38,10 @@ const SelectTicketsScreen = ({setPageTitle}) => {
     return (
         <TicketCountContext.Provider value={ticketCounts}>
             <Container className="mt-5">
+            <ProgressBarComponent currentStep={1} />
             <Row className="justify-content-center">
                 <div className="text-center mb-4">
-                    <h1>{t('Purchase Ticket')}</h1>
+                    <h1>{t('Select Tickets')}</h1>
                 </div>
                 <Col xs={12}>
                         <p className="ticket-validity-note">

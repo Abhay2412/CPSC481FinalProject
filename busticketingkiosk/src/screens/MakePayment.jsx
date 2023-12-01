@@ -9,6 +9,7 @@ import VisaIcon from '../assets/images/VisaPayment.svg';
 import MasterCardIcon from '../assets/images/MastercardImage.svg';
 import InteracIcon from '../assets/images/InteracLogo.svg';
 import TicketDispenserIcon from "../assets/images/TicketDispenser.png"
+import ProgressBarComponent from '../components/ProgressBar';
 import "../styles/MakePayment.css"
 
 const MakePaymentScreen = () => {
@@ -53,6 +54,7 @@ const MakePaymentScreen = () => {
     };
     return (
         <Container className='mt-5'>
+            <ProgressBarComponent currentStep={2} />
         <Row className="justify-content-center mb-4">
             <h1>{t('Payment')}</h1>
         </Row>

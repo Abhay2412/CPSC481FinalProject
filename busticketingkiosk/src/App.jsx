@@ -10,8 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SelectTicketsScreen from './screens/SelectTickets';
 import MakePaymentScreen from './screens/MakePayment';
 import SuccessfulPurchaseScreen from './screens/SuccessfulPurchaseScreen';
-import RouteInformation from './screens/RouteInformation';
-import MoreInfo from './screens/moreInfo';
+import RouteInformation from './screens/routeInformation';
 import RefundScreen from './screens/refund';
 import RefundSuccessScreen from './screens/RefundSuccess';
 import HelpModal from './components/HelpModal';
@@ -55,7 +54,6 @@ function App() {
             <Route path="/payment" element={<MakePaymentScreen setPageTitle={setPageTitle} />} />
             <Route path='/paymentSuccessful' element={<SuccessfulPurchaseScreen setPageTitle={setPageTitle}/>}/>
             <Route path='/routeInformation' element={<RouteInformation setPageTitle={setPageTitle}/>}/>
-            <Route path='/moreInfo' element={<MoreInfo setPageTitle={setPageTitle}/>}/>
             <Route path='/refund' element={<RefundScreen setPageTitle={setPageTitle}/>}/>
             <Route path='/refundConfirmation' element={<RefundSuccessScreen setPageTitle={setPageTitle}/>}/>
             <Route path='/detailedBusSchedule' element={<DetailedBusSchedule setPageTitle={setPageTitle}/>} />
