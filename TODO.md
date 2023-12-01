@@ -1,9 +1,11 @@
 ## TA's Feedback: 
 - [ ] Layout and Alignment: Requires improvement for better visual appeal and user experience.
+- [ ] Dashboard: Make the weather card stay open 
+- [ ] All Pages: Make the non selected language button transparent 
+- [ ] Route Information Screen: Emphasize the routes which are displayed in the dashboard 
+- [ ] Route Information Screen: Add a back button to the route information screen 
 
 ## Our own Heuristic Evaluation: 
-- [ ] Route Information Screen: The map does indicate the user's current location. Integrate real time location tracking with a distinct marker on the map to indicate the user's current location.
-- [ ] Bus Schedule Screen: Introduce filters or sorting options that allow users to view the relevant bus schedules.
 - [ ] Add a unsuccessful purchase screen to demo the error handling
 - [ ] Dashboard Screen: Display the user's current location. 
   
