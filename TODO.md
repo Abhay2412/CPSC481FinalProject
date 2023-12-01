@@ -8,6 +8,7 @@
 ## Our own Heuristic Evaluation: 
 - [ ] Add a unsuccessful purchase screen to demo the error handling
 - [ ] Dashboard Screen: Display the user's current location. 
+- [ ] Finish Readme 
   
 ## Things Done:
 - [x] Implement EN/FR translation
