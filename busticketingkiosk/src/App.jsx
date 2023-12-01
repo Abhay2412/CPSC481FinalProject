@@ -9,7 +9,7 @@ import DashboardScreen from './screens/Dashboard';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SelectTicketsScreen from './screens/SelectTickets';
 import MakePaymentScreen from './screens/MakePayment';
-import SuccessfulPurchaseScreen from './screens/SuccessfulPurchaseScreen';
+import SuccessfulPurchaseScreen from './screens/successfulPurchaseScreen';
 import RouteInformation from './screens/routeInformation';
 import RefundScreen from './screens/refund';
 import RefundSuccessScreen from './screens/RefundSuccess';
