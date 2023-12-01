@@ -8,9 +8,10 @@ import TapIcon from '../assets/images/WirelessPayment.svg';
 import VisaIcon from '../assets/images/VisaPayment.svg';
 import MasterCardIcon from '../assets/images/MastercardImage.svg';
 import InteracIcon from '../assets/images/InteracLogo.svg';
+import TicketDispenserIcon from "../assets/images/TicketDispenser.png"
 import "../styles/MakePayment.css"
 
-const MakePaymentScreen = ({setPageTitle}) => {
+const MakePaymentScreen = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { ticketCounts } = useContext(TicketCountContext);
@@ -18,6 +19,7 @@ const MakePaymentScreen = ({setPageTitle}) => {
     const { t } = useTranslation();
     const [showCancelModal, setShowCancelModal] = useState(false);
     const { selectedRoute, routeNumber } = location.state || {};
+    const [processingPayment, setProcessingPayment] = useState(false);
 
     const handleCancel = () => {
         setShowCancelModal(true);
@@ -25,6 +27,14 @@ const MakePaymentScreen = ({setPageTitle}) => {
 
     const handleConfirmCancel = () => {
         navigate('/tickets');
+    };
+
+    const handlePayment = () => {
+        setProcessingPayment(true);
+        setTimeout(() => {
+            setProcessingPayment(false);
+            navigate('/paymentSuccessful'); 
+        }, 3000); 
     };
 
     const computeTotal = () => {
@@ -49,9 +59,10 @@ const MakePaymentScreen = ({setPageTitle}) => {
         <Row>
             <Col md={6} className="text-center">
                 
-                <p><b>{t('Please insert or tap card')}</b></p>
+                <p><b>{t('Please insert or tap the card on the kiosk station below')}</b></p>
                 <img src={InsertIcon} width="150px" alt='Insert Icon' />
                 <img src={TapIcon} width="150px" alt='Tap Icon' />
+                <img src={TicketDispenserIcon} width="100px" alt='Ticket Kiosk' />
                 <p> </p>
                 <p><b>{t('Accepted Card Types')}</b></p>
                 <img src={VisaIcon} width="150px" alt='Visa Icon' />
@@ -77,24 +88,32 @@ const MakePaymentScreen = ({setPageTitle}) => {
         </Row>
         <Row className="buttons-row">
             <Col>
-                <Button className="button button-light-red" block onClick={handleCancel}>{t('Cancel Purchase')}</Button>
-                <Button className="button button-light-green" block onClick={() => navigate('/paymentSuccessful')}>{t('Purchase Tickets')}</Button>
+                <Button className="button button-light-red" block onClick={handleCancel}>{t('Back')}</Button>
+                <Button className="button button-light-green" block onClick={handlePayment} disabled={processingPayment}> {processingPayment ? t('Processing...') : t('Purchase Tickets')}</Button>
             </Col>
         </Row>
         <Modal show={showCancelModal} onHide={() => setShowCancelModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>{t('Confirmation')}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>{t('Are you sure you want to cancel the purchase?')}</Modal.Body>
+                <Modal.Body>{t('Are you sure you want to go back and select tickets?')}</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => setShowCancelModal(false)}>
                         {t('Close')}
                     </Button>
                     <Button variant="danger" onClick={handleConfirmCancel}>
-                        {t('Confirm Cancel')}
+                        {t('Confirm')}
                     </Button>
                 </Modal.Footer>
             </Modal>
+            {processingPayment && (
+            <div className="processing-overlay">
+                <div>
+                    <div className="spinner"></div>
+                    <div className="processing-text">{t('Please wait, your payment is being processed...')}</div>
+                </div>
+            </div>
+        )}
         </Container>
     );
 }
