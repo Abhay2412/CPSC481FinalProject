@@ -65,6 +65,7 @@ const resources = {
       "Please wait, your payment is being processed...": "Please wait, your payment is being processed...",
       "Refunds can be processed within 1 hour with reference code on ticket": "Refunds can be processed within 1 hour with reference code on ticket",
       'The schedules are valid from Monday to Sunday.': 'The schedules are valid from Monday to Sunday.',
+      "Payment failed, please go back to the payment screen and try again":"Payment failed, please go back to the payment screen and try again",
       //Components
       "Confirmation": "Confirmation",
       "Are you sure you want to go back to the bus ticketing kiosk homepage?": "Are you sure you want to go back to the bus ticketing kiosk homepage?",
@@ -141,6 +142,7 @@ const resources = {
         "Please collect your tickets from the dispenser below": "Merci de récupérer vos billets au distributeur ci-dessous",
         "Refunds can be processed within 1 hour with reference code on ticket": "Les remboursements peuvent être traités dans l'heure avec le code de référence sur le billet",
         'The schedules are valid from Monday to Sunday.':"Les horaires sont valables du lundi au dimanche.",
+        "Payment failed, please go back to the payment screen and try again": "Le paiement a échoué, veuillez revenir à l'écran de paiement et réessayer",
         //Components
         "Confirmation": "Confirmation",
         "Are you sure you want to go back to the bus ticketing kiosk homepage?": "Êtes-vous sûr de vouloir retourner à la page d'accueil du kiosque de billetterie de bus ?",
