@@ -104,7 +104,7 @@ const RouteInformation = () => {
                 <Col>
                     <div className="buttons-group">
                         <Button className="button button-lightgrey" block onClick={() => navigate('/dashboard')}>{t('Dashboard')}</Button>
-                        <Button className="button button-lightblue" block onClick={() => navigate('/tickets')}>{t('Purchase Ticket')}</Button>
+                        <Button className="button button-lightblue" block onClick={() => navigate('/tickets')}>{t('Select Tickets')}</Button>
                     </div>
                 </Col>
             </Row>
