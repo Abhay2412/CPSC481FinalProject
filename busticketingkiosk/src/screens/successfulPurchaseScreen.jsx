@@ -3,6 +3,7 @@ import TicketDispenserIcon from "../assets/images/TicketDispenser.png"
 import { useNavigate } from 'react-router-dom';
 import RefundsCanBeProcessedIcon from "../assets/images/RefundsCanBeProcessedIcon.svg"
 import { useTranslation } from 'react-i18next';
+import ProgressBarComponent from '../components/ProgressBar';
 import "../styles/SuccessfulPurchaseScreen.css"
 
 const SuccessfulPurchaseScreen = (props) => {
@@ -10,6 +11,7 @@ const SuccessfulPurchaseScreen = (props) => {
     const { t } = useTranslation();
     return (
         <Container className="mt-5">
+             <ProgressBarComponent currentStep={3} />
             <Row className="header-row">
                 <Col>
                     <h1>{t('Purchase Successful')}</h1>

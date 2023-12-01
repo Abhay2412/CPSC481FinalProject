@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Button, Table } from 'react-bootstrap';
+import { Container, Row, Col, Button, Table, Card } from 'react-bootstrap';
 import DashboardImage from '../assets/images/DashboardYellowBus.svg'
 import '../styles/Dashboard.css';
 import { useNavigate } from 'react-router-dom';
@@ -9,11 +9,12 @@ const DashboardScreen = ({setPageTitle}) => {
     const navigate = useNavigate();
     const [weatherData, setWeatherData] = useState(null);
     const [currentTime, setCurrentTime] = useState(new Date());
+    const [showWeather, setShowWeather] = useState(false);
     const { t } = useTranslation();
     const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
     useEffect(() => {
-        setPageTitle()
+        setPageTitle();
         // Update time every minute
         const interval = setInterval(() => setCurrentTime(new Date()), 60000);
 
@@ -45,12 +46,12 @@ const DashboardScreen = ({setPageTitle}) => {
                 </Col>
             </Row>
             <img src={DashboardImage} alt='Yellow Bus'></img>
-            <h3 style={{marginLeft: "880px", color:"#75b4e3"}}>{t('Live Weather and Time')}</h3>
+            {/* <h3 style={{marginLeft: "880px", color:"#75b4e3"}}>{t('Live Weather and Time')}</h3> */}
             {/* Transit and Weather */}
-            <Row className="content-row">
+            <Row className="content-row justify-content-center">
                 {/* Transit Details */}
                 <Col md={8} className="transit-details">
-                    <Table bordered>
+                <Table striped bordered className="mx-auto">
                         <thead>
                             <tr>
                                 <th>{t('Arrival Time')}</th>
@@ -77,28 +78,31 @@ const DashboardScreen = ({setPageTitle}) => {
                         </tbody>
                     </Table>
                 </Col>
-
-                {/* Weather and Date */}
-                <Col md={4} className="weather-section">
-                    <div className="weather-container">
-                        <div className="weather-icon">
-                            <img src={iconUrl} alt='Weather Icon' />
-                        </div>
-                        <div className="weather-temp">
-                            <span>{temperature}</span>
-                            <p>{t('Feels Like:') }{feelsLikeTemperature}</p>
-                        </div>
-                    </div>
-                    <div className="date-details">
-                        <div>{currentTime.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</div>
-                        <div>{currentTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}</div>
-                    </div>
-                </Col>
             </Row>
+                <Card className={`weather-card ${showWeather ? 'expanded' : ''}`} onClick={() => setShowWeather(!showWeather)}>
+                    <Card.Body>
+                    <Card.Title>{t('View Live Weather/Time')}</Card.Title>
+                    {showWeather && (
+                        <>
+                            <div className="weather-icon">
+                                <img src={iconUrl} alt='Weather Icon' />
+                            </div>
+                            <div className="weather-temp">
+                                <span>{temperature}</span>
+                                <p>{t('Feels Like:')} {feelsLikeTemperature}</p>
+                            </div>
+                            <div className="date-details">
+                                <div>{currentTime.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                                <div>{currentTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}</div>
+                            </div>
+                        </>
+                    )}
+                </Card.Body>
+            </Card>
             <Row className="buttons-row">
                 <Col>
                     <div className="buttons-group">
-                        <Button className="button button-lightblue" block onClick={() => navigate('/tickets')}>{t('Purchase Ticket')}</Button>
+                        <Button className="button button-lightblue" block onClick={() => navigate('/tickets')}>{t('Select Tickets')}</Button>
                         <Button className="button button-lightblue" block onClick={() => navigate('/routeInformation')}>{t('Route Information')}</Button>
                     </div>
                 </Col>
@@ -109,7 +113,7 @@ const DashboardScreen = ({setPageTitle}) => {
                     </div>
                 </Col>
             </Row>
-        </Container>
+        </Container>        
     );
 };
 

@@ -111,3 +111,26 @@
     bottom: 10%;
     right: 10%;
 }
+
+.dashboard-container {
+    flex-grow: 1; 
+}
+
+.weather-card {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 300px;
+}
+
+.table {
+    margin: 0 auto;
+    width: auto;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}

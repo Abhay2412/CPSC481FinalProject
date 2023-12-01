@@ -3,8 +3,10 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Button, Dropdown, Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import "../styles/RouteInformation.css"
+import Bus1 from "../assets/images/Bus1.svg";
+import DisableIcon from "../assets/images/DisableIcon.svg";
 
-const RouteInformation = (props) => {
+const RouteInformation = () => {
     const navigate = useNavigate();
     const [routeNumber, setRouteNumber] = useState("");
     const [nextDeparture, setNextDeparture] = useState("");
@@ -42,7 +44,6 @@ const RouteInformation = (props) => {
     },[location.state?.selectedRoute])
 
     const handleRouteChange = (route) => { setSelectedRoute(route); setRouteNumber(routeData[route].routeNumber); setNextDeparture(routeData[route].nextDeparture); setDuration(routeData[route].duration); setNumberOfStops(routeData[route].numberOfStops) };
-
     return (
         <Container className="mt-5">
             <Row className="header-row">
@@ -80,10 +81,16 @@ const RouteInformation = (props) => {
                         <div className="mb-3 d-flex align-items-center">
                             <span className="label-text-select-route"><b>{t('Duration: ')}</b> {duration}</span> 
                         </div>
+                        <div className="mb-3 d-flex align-items-center">
+                            <span className="label-text-select-route"><b>{t('Upcoming Bus Type: ')}</b> <img src={Bus1} alt="Bus Type 1" style={{height: 50}}/> <img src={DisableIcon} alt="Accessible Icon" style={{height: 30}} /></span> 
+                        </div>
+                        <div className="mb-3 d-flex align-items-center">
+                            <span className="label-text-select-route" style={{ color: "orange"}}><i>{t('Buses offering accessibility are identified with this icon')}:</i> <img src={DisableIcon} alt="Accessible Icon" style={{height: 30}} /></span> 
+                        </div>
                     </div>
+                    
                     <div>
-                        <Button className="button button-light-blue" disabled={!selectedRoute} block onClick={() => navigate('/moreInfo', {state: {selectedRoute, routeData: routeData[selectedRoute]}})} >{t('More Info')}</Button>
-                        <Button className="button button-light-blue" disabled={!selectedRoute} block onClick={() => navigate('/detailedBusSchedule', {state: {selectedRoute, routeData: routeData[selectedRoute]}})}> Detailed Bus schedule </Button>
+                        <Button className="button button-light-blue" disabled={!selectedRoute} block onClick={() => navigate('/detailedBusSchedule', {state: {selectedRoute, routeData: routeData[selectedRoute]}})}> View Bus Schedule </Button>
                     </div>
                 </Col>
                 <Col md={5}>
