@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 import { Button, Modal, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt, faPhone, faEnvelope, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import TransitOfficeImage from '../assets/images/CalgaryTransitCustomerServiceOffice.jpg';
-import { useTranslation } from 'react-i18next';  
+import { useTranslation } from 'react-i18next'; 
+import "../styles/HelpModal.css"
 
 const HelpModal = () => {
   const [show, setShow] = useState(false);
@@ -15,11 +16,11 @@ const HelpModal = () => {
 
   return (
     <>
-      <Button variant="outline-danger" onClick={handleShow} className='navbar-buttons'>
-        {t('Help')}
+      <Button onClick={handleShow} show={show} onHide={handleClose} centered backdrop="static" keyboard={false} className='btn-help'>
+      <FontAwesomeIcon icon={faInfoCircle} className="mr-2" /> {t('Help')}
       </Button>
 
-      <Modal show={show} onHide={handleClose} centered>
+      <Modal show={show} onHide={handleClose} centered backdrop="static" keyboard={false}>
         <Modal.Header closeButton>
           <Modal.Title>{t('Calgary Transit Office')}</Modal.Title>
         </Modal.Header>

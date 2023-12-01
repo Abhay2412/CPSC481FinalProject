@@ -40,20 +40,27 @@
     margin-bottom: 15px;
 }
 
-/* Button Styling */
-.navbar-buttons {
+button.btn-help {
+    background-color: #e71212; 
+    color: white; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    font-size: 1.1em; 
+    transition: all 0.3s ease;
     margin: 0 5px;
+    font-weight: bold;  
+    border: #7c0101;
 }
 
-.svg-right .btn-outline-danger {
-    color: #dc3545;
-    border-color: #dc3545;
+button.btn-help:hover, .btn-help:focus {
+    background-color: #9e1c1c; 
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); 
 }
 
-.svg-right .btn-outline-danger:hover {
-    color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545;
+.svg-right .btn-help {
+    background-color: #e71212;
+    color: white;
 }
 
 .modal-image {

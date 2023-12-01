@@ -3,12 +3,14 @@ import { Col, Container, Row, Form, Button, Alert } from "react-bootstrap";
 import RefundImage from "../assets/images/RefundImage.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import "../styles/Refund.css"
 
 const RefundScreen = (props) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [refundReferenceNumber, setRefundReferenceNumber] = useState("");
     const [isFormatCorrect, setIsFormatCorrect] = useState(true);
+    const [processingRefund, setProcessingRefund] = useState(false);
     const { t } = useTranslation();
 
     useEffect(() => {
@@ -22,11 +24,16 @@ const RefundScreen = (props) => {
         return regex.test(input);
     };
 
+
     const handleNextClick = (e) => {
         e.preventDefault();
         setIsFormatCorrect(checkFormat(refundReferenceNumber));
         if (checkFormat(refundReferenceNumber)) {
-            navigate('/refundConfirmation', { state: { refundReferenceNumber } });
+            setProcessingRefund(true);
+            setTimeout(() => {
+                setProcessingRefund(false);
+                navigate('/refundConfirmation', { state: { refundReferenceNumber } });
+            }, 3000);
         }
     };
 
@@ -65,11 +72,19 @@ const RefundScreen = (props) => {
             <Row>
                 <Col>
                     <div className="">
-                        <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')} >{t('Dashboard')}</Button>
-                        <Button className="button button-light-green" block onClick={handleNextClick}>{t('Process Refund')}</Button>
+                        <Button className="button button-light-grey-refund" block onClick={() => navigate('/dashboard')} >{t('Dashboard')}</Button>
+                        <Button className="button button-light-green-refund" block onClick={handleNextClick} disabled={processingRefund}>{processingRefund ? t('Processing...') : t('Process Refund')}</Button>
                     </div>
                 </Col>
             </Row>
+            {processingRefund && (
+            <div className="processing-overlay">
+                <div>
+                    <div className="spinner"></div>
+                    <div className="processing-text">{t('Please wait, your refund is being processed...')}</div>
+                </div>
+            </div>
+        )}
         </Container>
     );
 };
