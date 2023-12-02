@@ -8,7 +8,7 @@ import TapIcon from '../assets/images/WirelessPayment.svg';
 import VisaIcon from '../assets/images/VisaPayment.svg';
 import MasterCardIcon from '../assets/images/MastercardImage.svg';
 import InteracIcon from '../assets/images/InteracLogo.svg';
-import TicketDispenserIcon from "../assets/images/TicketDispenser.png"
+import TicketDispenserPaymentIcon from "../assets/images/TicketDispenserPayment.jpg"
 import ProgressBarComponent from '../components/ProgressBar';
 import "../styles/MakePayment.css"
 
@@ -61,10 +61,8 @@ const MakePaymentScreen = () => {
         <Row>
             <Col md={6} className="text-center">
                 
-                <p><b>{t('Please insert or tap the card on the kiosk station below')}</b></p>
-                <img src={InsertIcon} width="150px" alt='Insert Icon' />
-                <img src={TapIcon} width="150px" alt='Tap Icon' />
-                <img src={TicketDispenserIcon} width="100px" alt='Ticket Kiosk' />
+                <p><b>{t('Please insert the card on the kiosk station to the right')}</b></p>
+                <img src={TicketDispenserPaymentIcon} width="400px" alt='Ticket Kiosk' />
                 <p> </p>
                 <p><b>{t('Accepted Card Types')}</b></p>
                 <img src={VisaIcon} width="150px" alt='Visa Icon' />

@@ -37,7 +37,7 @@ const RouteInformation = () => {
         "Dalhousie": { routeNumber: "9", nextDeparture: "3:00 PM", duration: "10 minutes", numberOfStops: 5, lastDeparture: "11:10 PM" },
         "City Hall": { routeNumber: "10", nextDeparture: "12:15 PM", duration: "1 hour 23 minutes", numberOfStops: 47, lastDeparture: "11:25 PM" },
         "Castleridge": { routeNumber: "21", nextDeparture: "12:30 PM", duration: "30 minutes", numberOfStops: 30, lastDeparture: "11:45 PM" },
-        "Monterey Park": { routeNumber: "57", nextDeparture: "12:45 PM", duration: "28 minutes", numberOfStops: 32, lastDeparture: "11:15 PM" },
+        "Monterey Park": { routeNumber: "57", nextDeparture: "12:45 PM", duration: "28 minutes", numberOfStops: 32, lastDeparture: "11:15 PM" }
     };
 
     useEffect(() => {
