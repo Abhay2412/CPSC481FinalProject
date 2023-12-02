@@ -14,3 +14,8 @@
     color: #0c0c0c;
     margin-top: 50px;
 }
+
+.emphasize-route {
+    font-weight: bold;
+    background-color: #e6e6e6;
+  }

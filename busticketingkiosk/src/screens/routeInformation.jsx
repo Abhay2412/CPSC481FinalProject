@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Button, Dropdown, Container, Row, Col } from 'react-bootstrap';
+import { Button, Dropdown, Container, Row, Col, Modal } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import "../styles/RouteInformation.css"
 import Bus1 from "../assets/images/Bus1.svg";
@@ -15,20 +15,29 @@ const RouteInformation = () => {
     const [numberOfStops, setNumberOfStops] = useState();
     const location = useLocation();
     const { t } = useTranslation();
+    const [showCancelModal, setShowCancelModal] = useState(false);
+
+    const handleCancel = () => {
+        setShowCancelModal(true);
+    };
+
+    const handleConfirmCancel = () => {
+        navigate('/dashboard');
+    };
 
     const routeData = {
         "Bowness": { routeNumber: "1", nextDeparture: "10:15 AM", duration: "30 minutes", numberOfStops: 20, lastDeparture: "11:15 PM"},
+        "North Pointe": { routeNumber: "8", nextDeparture: "11:45 AM", duration: "35 minutes", numberOfStops: 42, lastDeparture: "10:20 PM" },
+        "Nolan Hill": { routeNumber: "82", nextDeparture: "1:00 PM", duration: "30 minutes" , numberOfStops: 35, lastDeparture: "11:00 PM"},
         "Mount Pleasant": { routeNumber: "2", nextDeparture: "10:30 AM", duration: "1 hour", numberOfStops: 70, lastDeparture: "11:30 PM"},
         "Sandstone": { routeNumber: "3", nextDeparture: "10:45 AM", duration: "2 hours", numberOfStops: 80, lastDeparture: "11:15 PM" },
         "Huntington": { routeNumber: "4", nextDeparture: "11:00 AM", duration: "2 hours 50 minutes", numberOfStops: 75, lastDeparture: "11:15 PM" },
         "Killarney": { routeNumber: "6", nextDeparture: "11:15 AM", duration: "35 minutes", numberOfStops: 34, lastDeparture: "11:10 PM" },
         "Marda Loop": { routeNumber: "7", nextDeparture: "11:30 AM", duration: "30 minutes", numberOfStops: 38, lastDeparture: "10:15 PM" },
-        "North Pointe": { routeNumber: "8", nextDeparture: "11:45 AM", duration: "35 minutes", numberOfStops: 42, lastDeparture: "10:20 PM" },
         "Dalhousie": { routeNumber: "9", nextDeparture: "3:00 PM", duration: "10 minutes", numberOfStops: 5, lastDeparture: "11:10 PM" },
         "City Hall": { routeNumber: "10", nextDeparture: "12:15 PM", duration: "1 hour 23 minutes", numberOfStops: 47, lastDeparture: "11:25 PM" },
         "Castleridge": { routeNumber: "21", nextDeparture: "12:30 PM", duration: "30 minutes", numberOfStops: 30, lastDeparture: "11:45 PM" },
         "Monterey Park": { routeNumber: "57", nextDeparture: "12:45 PM", duration: "28 minutes", numberOfStops: 32, lastDeparture: "11:15 PM" },
-        "Nolan Hill": { routeNumber: "82", nextDeparture: "1:00 PM", duration: "30 minutes" , numberOfStops: 35, lastDeparture: "11:00 PM"}
     };
 
     useEffect(() => {
@@ -60,11 +69,20 @@ const RouteInformation = () => {
                             {selectedRoute || "Select a Route"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {Object.keys(routeData).map(route => (
-                                    <Dropdown.Item key={route} onClick={() => handleRouteChange(route)}>
+                                {Object.keys(routeData).map(route => {
+                                    const isEmphasized = ["Bowness", "Nolan Hill", "North Pointe"].includes(route);
+                                    const itemClass = isEmphasized ? 'emphasize-route' : '';
+
+                                    return (
+                                    <Dropdown.Item 
+                                        key={route} 
+                                        onClick={() => handleRouteChange(route)}
+                                        className={itemClass}
+                                    >
                                         {route}
                                     </Dropdown.Item>
-                                ))}
+                                    );
+                                })}
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
@@ -103,11 +121,25 @@ const RouteInformation = () => {
             <Row className="buttons-row">
                 <Col>
                     <div className="buttons-group">
-                        <Button className="button button-lightgrey" block onClick={() => navigate('/dashboard')}>{t('Dashboard')}</Button>
+                        <Button className="button button-light-red" block onClick={handleCancel}>{t('Back')}</Button>
                         <Button className="button button-lightblue" block onClick={() => navigate('/tickets')}>{t('Select Tickets')}</Button>
                     </div>
                 </Col>
             </Row>
+            <Modal show={showCancelModal} onHide={() => setShowCancelModal(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{t('Confirmation')}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{t('Are you sure you want to go back to dashboard?')}</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowCancelModal(false)}>
+                        {t('Close')}
+                    </Button>
+                    <Button variant="danger" onClick={handleConfirmCancel}>
+                        {t('Confirm')}
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </Container>
     )
 }

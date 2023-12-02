@@ -4,12 +4,15 @@
 
 .navbar-buttons {
   margin-right: 5px;
+  background-color: transparent;   
+  opacity: 0.5; 
 }
 
 button.navbar-buttons.selected-language {
-  background-color: #00397a; /* Bootstrap primary color */
+  background-color: #00397a; 
   color: white;
   border-color: #003369;
+  opacity: 1;
 }
 
 .parent-container {
