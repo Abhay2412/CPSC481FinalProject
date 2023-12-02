@@ -9,7 +9,6 @@ const DashboardScreen = ({setPageTitle}) => {
     const navigate = useNavigate();
     const [weatherData, setWeatherData] = useState(null);
     const [currentTime, setCurrentTime] = useState(new Date());
-    const [showWeather, setShowWeather] = useState(false);
     const { t } = useTranslation();
     const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
@@ -79,24 +78,21 @@ const DashboardScreen = ({setPageTitle}) => {
                     </Table>
                 </Col>
             </Row>
-                <Card className={`weather-card ${showWeather ? 'expanded' : ''}`} onClick={() => setShowWeather(!showWeather)}>
-                    <Card.Body>
-                    <Card.Title>{t('View Live Weather/Time')}</Card.Title>
-                    {showWeather && (
-                        <>
-                            <div className="weather-icon">
-                                <img src={iconUrl} alt='Weather Icon' />
-                            </div>
-                            <div className="weather-temp">
-                                <span>{temperature}</span>
-                                <p>{t('Feels Like:')} {feelsLikeTemperature}</p>
-                            </div>
-                            <div className="date-details">
-                                <div>{currentTime.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</div>
-                                <div>{currentTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}</div>
-                            </div>
-                        </>
-                    )}
+            <Card className="weather-card expanded">
+                <Card.Body>
+                    <Card.Title>{t('Live Weather and Time')}</Card.Title>
+                    {/* Weather information always displayed */}
+                    <div className="weather-icon">
+                        <img src={iconUrl} alt='Weather Icon' />
+                    </div>
+                    <div className="weather-temp">
+                        <span>{temperature}</span>
+                        <p>{t('Feels Like:')} {feelsLikeTemperature}</p>
+                    </div>
+                    <div className="date-details">
+                        <div>{currentTime.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                        <div>{currentTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}</div>
+                    </div>
                 </Card.Body>
             </Card>
             <Row className="buttons-row">
