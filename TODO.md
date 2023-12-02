@@ -1,9 +1,5 @@
 ## TA's Feedback: 
 - [ ] Layout and Alignment: Requires improvement for better visual appeal and user experience.
-- [ ] Dashboard: Make the weather card stay open 
-- [ ] All Pages: Make the non selected language button transparent 
-- [ ] Route Information Screen: Emphasize the routes which are displayed in the dashboard 
-- [ ] Route Information Screen: Add a back button to the route information screen 
   
 ## Things Done:
 - [x] Implement EN/FR translation
@@ -36,5 +32,12 @@
 - [x] Route Information Screen: Clarify how users access this screen. Consider moving the "number of stops" to more info and emphasizing bus interval.
 - [x] Add a unsuccessful purchase screen to demo the error handling
 - [x] Dashboard Screen: Display the user's current location. 
+- [x] Dashboard: Make the weather card stay open 
+- [x] All Pages: Make the non selected language button transparent 
+- [x] Route Information Screen: Emphasize the routes which are displayed in the dashboard 
+- [x] Route Information Screen: Add a back button to the route information screen 
+- [x] Make Payment Screen: Add the kiosk station and highlight the payment component of it in red
+- [x] Purchase Successful Screen: Add the kiosk station and highlight the ticket collection component of it in red
+- [x] Select Tickets Screen: Emphasize the routes which are displayed in the dashboard   
 
 ## Nice to haves:

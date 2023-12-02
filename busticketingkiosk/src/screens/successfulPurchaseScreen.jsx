@@ -1,5 +1,5 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import TicketDispenserIcon from "../assets/images/TicketDispenser.png"
+import TicketDispenserIcon from "../assets/images/TicketDispenser.jpg"
 import { useNavigate } from 'react-router-dom';
 import RefundsCanBeProcessedIcon from "../assets/images/RefundsCanBeProcessedIcon.svg"
 import { useTranslation } from 'react-i18next';
@@ -23,7 +23,7 @@ const SuccessfulPurchaseScreen = (props) => {
                         <div style={{fontFamily: "Arial sans-serif", fontWeight: "bold", fontSize: "20px"}}>
                             {t('Please collect your tickets from the dispenser below')}
                         </div>
-                        <img style={{height: 200, width: 100, marginLeft: 175}} src={TicketDispenserIcon} alt="Ticket Kiosk"/>
+                        <img style={{height: 275, width: 400, marginLeft: 25}} src={TicketDispenserIcon} alt="Ticket Kiosk"/>
                     </div>
                 </div>
                 <div style={{display: "flex",margin: "40px", marginTop: "70px" ,flexDirection: "column", flexBasis: "50%"}}>

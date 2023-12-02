@@ -19,17 +19,17 @@ const SelectTicketsScreen = ({setPageTitle}) => {
     const routes = ["Bowness", "Mount Pleasant", "Sandstone", "Huntington", "Killarney", "Marda Loop", "North Pointe", "Dalhousie", "City Hall", "Castleridge", "Falconridge", "Nolan Hill"]
     const routeData = {
         "Bowness": { routeNumber: "1", nextDeparture: "10:15 AM", duration: "30 minutes", numberOfStops: 13, lastDeparture: "11:15 PM"},
+        "North Pointe": { routeNumber: "8", nextDeparture: "11:45 AM", duration: "35 minutes", numberOfStops: 42, lastDeparture: "10:20 PM" },
+        "Nolan Hill": { routeNumber: "82", nextDeparture: "1:00 PM", duration: "30 minutes" , numberOfStops: 35, lastDeparture: "11:00 PM"},
         "Mount Pleasant": { routeNumber: "2", nextDeparture: "10:30 AM", duration: "1 hour", numberOfStops: 70, lastDeparture: "11:30 PM"},
         "Sandstone": { routeNumber: "3", nextDeparture: "10:45 AM", duration: "2 hours", numberOfStops: 80, lastDeparture: "11:15 PM" },
         "Huntington": { routeNumber: "4", nextDeparture: "11:00 AM", duration: "2 hours 50 minutes", numberOfStops: 75, lastDeparture: "11:15 PM" },
         "Killarney": { routeNumber: "6", nextDeparture: "11:15 AM", duration: "35 minutes", numberOfStops: 34, lastDeparture: "11:10 PM" },
         "Marda Loop": { routeNumber: "7", nextDeparture: "11:30 AM", duration: "30 minutes", numberOfStops: 38, lastDeparture: "10:15 PM" },
-        "North Pointe": { routeNumber: "8", nextDeparture: "11:45 AM", duration: "35 minutes", numberOfStops: 42, lastDeparture: "10:20 PM" },
         "Dalhousie": { routeNumber: "9", nextDeparture: "3:00 PM", duration: "10 minutes", numberOfStops: 5, lastDeparture: "11:10 PM" },
         "City Hall": { routeNumber: "10", nextDeparture: "12:15 PM", duration: "1 hour 23 minutes", numberOfStops: 47, lastDeparture: "11:25 PM" },
         "Castleridge": { routeNumber: "21", nextDeparture: "12:30 PM", duration: "30 minutes", numberOfStops: 30, lastDeparture: "11:45 PM" },
-        "Monterey Park": { routeNumber: "57", nextDeparture: "12:45 PM", duration: "28 minutes", numberOfStops: 32, lastDeparture: "11:15 PM" },
-        "Nolan Hill": { routeNumber: "82", nextDeparture: "1:00 PM", duration: "30 minutes" , numberOfStops: 35, lastDeparture: "11:00 PM"}
+        "Monterey Park": { routeNumber: "57", nextDeparture: "12:45 PM", duration: "28 minutes", numberOfStops: 32, lastDeparture: "11:15 PM" }
     };
     const handleRouteChange = (route) => { setSelectedRoute(route); setRouteNumber(routeData[route].routeNumber); setNextDeparture(routeData[route].nextDeparture); setDuration(routeData[route].duration); };
     useEffect(() => {
@@ -56,12 +56,21 @@ const SelectTicketsScreen = ({setPageTitle}) => {
                     {selectedRoute || "Select a Route"}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                        {routes.map(route => (
-                            <Dropdown.Item key={route} onClick={() => handleRouteChange(route)}>
-                                {route}
-                            </Dropdown.Item>
-                        ))}
-                    </Dropdown.Menu>
+                                {Object.keys(routeData).map(route => {
+                                    const isEmphasized = ["Bowness", "Nolan Hill", "North Pointe"].includes(route);
+                                    const itemClass = isEmphasized ? 'emphasize-route' : '';
+
+                                    return (
+                                    <Dropdown.Item 
+                                        key={route} 
+                                        onClick={() => handleRouteChange(route)}
+                                        className={itemClass}
+                                    >
+                                        {route}
+                                    </Dropdown.Item>
+                                    );
+                                })}
+                            </Dropdown.Menu>
                     </Dropdown>
                 </div>
                 <div className="mb-3 d-flex align-items-center">
