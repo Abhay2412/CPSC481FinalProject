@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import TicketDispenserIcon from "../assets/images/TicketDispenser.png"
+import TicketDispenserIcon from "../assets/images/paymentDeclined.png"
 import { useNavigate } from 'react-router-dom';
 import RefundsCanBeProcessedIcon from "../assets/images/RefundsCanBeProcessedIcon.svg"
 import { useTranslation } from 'react-i18next';
@@ -19,13 +19,13 @@ const UnsuccessfulPurchaseScreen = () => {
                     <h1>{t('Purchase Unsuccessful')}</h1>
                 </Col>
             </Row>
-            <div style={{display: "flex", justifyContent: "space-between"}}>
-                <div style={{display: "flex", margin: "40px", marginTop: "70px", flexBasis: "50%"}}>
-                    <div style={{display: "flex",flexDirection: "column"}}>
-                        <div style={{fontFamily: "Arial sans-serif", fontWeight: "bold", fontSize: "20px"}}>
+            <div style={{display: "flex", justifyContent: "center"}}>
+                <div style={{display: "flex", margin: "40px", marginTop: "70px"}}>
+                    <div style={{display: "flex",flexDirection: "row",backgroundColor: "#f2e1e1", borderRadius: 10}}>
+                        <img style={{height: 200, width: "auto"}} src={TicketDispenserIcon} alt="Ticket Kiosk"/>
+                        <div style={{fontFamily: "Arial sans-serif", fontWeight: "bold", fontSize: "20px", display: 'flex',alignItems: 'center', color: '#d93e30', marginRight: 60}}>
                             {t('Payment failed, please go back to the payment screen and try again')}
                         </div>
-                        <img style={{height: 200, width: 100, marginLeft: 175}} src={TicketDispenserIcon} alt="Ticket Kiosk"/>
                     </div>
                 </div>
                 {/* <div style={{display: "flex",margin: "40px", marginTop: "70px" ,flexDirection: "column", flexBasis: "50%"}}>
