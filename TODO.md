@@ -1,10 +1,9 @@
 ## TA's Feedback: 
 - [ ] Layout and Alignment: Requires improvement for better visual appeal and user experience.
-
-## Our own Heuristic Evaluation: 
-- [ ] Add a unsuccessful purchase screen to demo the error handling
-- [ ] Dashboard Screen: Display the user's current location. 
-- [ ] Finish Readme 
+- [ ] Dashboard: Make the weather card stay open 
+- [ ] All Pages: Make the non selected language button transparent 
+- [ ] Route Information Screen: Emphasize the routes which are displayed in the dashboard 
+- [ ] Route Information Screen: Add a back button to the route information screen 
   
 ## Things Done:
 - [x] Implement EN/FR translation
@@ -35,9 +34,7 @@
 - [x] Purchase Ticket Screen: The system does not clearly indicate which steps have been completed in the ticket purchasing process, consider adding a progress bar or a checklist.
 - [x] Weather Tab Placement: Consider placing the weather tab in a separate side card since it's not immediately relevant to bus information.
 - [x] Route Information Screen: Clarify how users access this screen. Consider moving the "number of stops" to more info and emphasizing bus interval.
-- [x] Dashboard: Make the weather card stay open 
-- [x] Route Information Screen: Emphasize the routes which are displayed in the dashboard 
-- [x] Route Information Screen: Add a back button to the route information screen 
-- [x] All Pages: Make the non selected language button transparent 
+- [x] Add a unsuccessful purchase screen to demo the error handling
+- [x] Dashboard Screen: Display the user's current location. 
 
 ## Nice to haves:

@@ -19,6 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import DetailedBusSchedule from './screens/detailedBusSchedule';
 import { useTranslation } from 'react-i18next';
+import UnsuccessfulPurchaseScreen from './screens/UnsuccessfulPurchaseScreen';
 export const TicketCountContext = React.createContext();
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
             <Route path='/refund' element={<RefundScreen setPageTitle={setPageTitle}/>}/>
             <Route path='/refundConfirmation' element={<RefundSuccessScreen setPageTitle={setPageTitle}/>}/>
             <Route path='/detailedBusSchedule' element={<DetailedBusSchedule setPageTitle={setPageTitle}/>} />
+            <Route path='/paymentUnsuccessful' element={<UnsuccessfulPurchaseScreen setPageTitle={setPageTitle}/>}/>
           </Routes>
         </TicketCountContext.Provider>
         <footer className="footer mt-auto py-3 bg-none">
