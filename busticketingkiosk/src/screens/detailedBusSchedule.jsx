@@ -1,5 +1,5 @@
 import React from "react";
-import { Container,Row,Button, Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useNavigate, useLocation } from "react-router-dom";
 import {useTable} from 'react-table';
 import styled from "styled-components";
@@ -9,8 +9,8 @@ const DetailedBusSchedule = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const {selectedRoute, routeData} = location.state;
-    const {nextDeparture, duration, numberOfStops, lastDeparture} = routeData;
+    const { routeData } = location.state;
+    const { nextDeparture } = routeData;
     const { t } = useTranslation();
 
     const  generateBusSchedule = (nextDepartureTime, lastDeparture, numStops, rideDuration) => {

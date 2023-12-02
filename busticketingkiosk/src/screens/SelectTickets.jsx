@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Button, Dropdown, Container, Row, Col } from 'react-bootstrap';
+import { Button, Dropdown, Container, Row, Col, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import DurationLogo from '../assets/images/DurationLogo.png';
 import "../styles/SelectTickets.css"
@@ -16,7 +16,16 @@ const SelectTicketsScreen = ({setPageTitle}) => {
     const [duration, setDuration] = useState('');
     const { ticketCounts, setTicketCounts } = useContext(TicketCountContext);
     const { t } = useTranslation();
-    const routes = ["Bowness", "Mount Pleasant", "Sandstone", "Huntington", "Killarney", "Marda Loop", "North Pointe", "Dalhousie", "City Hall", "Castleridge", "Falconridge", "Nolan Hill"]
+    const [showCancelModal, setShowCancelModal] = useState(false);
+
+    const handleCancel = () => {
+        setShowCancelModal(true);
+    };
+
+    const handleConfirmCancel = () => {
+        navigate('/dashboard');
+    };
+
     const routeData = {
         "Bowness": { routeNumber: "1", nextDeparture: "10:15 AM", duration: "30 minutes", numberOfStops: 13, lastDeparture: "11:15 PM"},
         "North Pointe": { routeNumber: "8", nextDeparture: "11:45 AM", duration: "35 minutes", numberOfStops: 42, lastDeparture: "10:20 PM" },
@@ -104,11 +113,25 @@ const SelectTicketsScreen = ({setPageTitle}) => {
             </Row>
             <Row className="buttons-row">
                     <Col>
-                        <Button className="button button-light-grey" block onClick={() => navigate('/dashboard')}>{t('Return to Dashboard')}</Button>
+                        <Button className="button button-light-red" block onClick={handleCancel}>{t('Back')}</Button>
                         <Button className="button button-light-green" block onClick={() => navigate('/payment', {  state: { selectedRoute, routeNumber } })} disabled={!selectedRoute}>{t('Next')}</Button>
                     </Col>
             </Row>
-            </Container>
+            <Modal show={showCancelModal} onHide={() => setShowCancelModal(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{t('Confirmation')}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{t('Are you sure you want to go back to dashboard?')}</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowCancelModal(false)}>
+                        {t('Close')}
+                    </Button>
+                    <Button variant="danger" onClick={handleConfirmCancel}>
+                        {t('Confirm')}
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        </Container>
         </TicketCountContext.Provider>
       );
 };
