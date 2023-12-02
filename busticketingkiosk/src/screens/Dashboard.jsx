@@ -45,7 +45,7 @@ const DashboardScreen = ({setPageTitle}) => {
                 </Col>
             </Row>
             <img src={DashboardImage} alt='Yellow Bus'></img>
-            <h3>University of Calgary Station</h3>
+            <h4>{t('Current Location: Brentwood Station')}</h4>
             {/* <h3 style={{marginLeft: "880px", color:"#75b4e3"}}>{t('Live Weather and Time')}</h3> */}
             {/* Transit and Weather */}
             <Row className="content-row justify-content-center">
