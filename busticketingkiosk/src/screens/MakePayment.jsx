@@ -3,11 +3,6 @@ import { Button, Container, Row, Col, Modal } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { TicketCountContext } from '../App';
 import { useTranslation } from 'react-i18next';
-import InsertIcon from '../assets/images/InsertCardImage.svg';
-import TapIcon from '../assets/images/WirelessPayment.svg';
-import VisaIcon from '../assets/images/VisaPayment.svg';
-import MasterCardIcon from '../assets/images/MastercardImage.svg';
-import InteracIcon from '../assets/images/InteracLogo.svg';
 import TicketDispenserPaymentIcon from "../assets/images/TicketDispenserPayment.jpg"
 import ProgressBarComponent from '../components/ProgressBar';
 import "../styles/MakePayment.css"
@@ -63,11 +58,6 @@ const MakePaymentScreen = () => {
                 
                 <p><b>{t('Please insert the card on the kiosk station to the right')}</b></p>
                 <img src={TicketDispenserPaymentIcon} width="400px" alt='Ticket Kiosk' />
-                <p> </p>
-                <p><b>{t('Accepted Card Types')}</b></p>
-                <img src={VisaIcon} width="150px" alt='Visa Icon' />
-                <img src={MasterCardIcon} width="150px" alt='MasterCard Icon' />
-                <img src={InteracIcon} width="150px" alt='Interac Icon' />
             </Col>
             <Col md={6} style={{ backgroundColor: '#eef', padding: 20, borderRadius: 10 }}>
                 <h3>{t('Summary')}</h3>
