@@ -27,13 +27,40 @@ Jay Gurjar
 5. Open http://localhost:5173 to view it in the browser.
 
 ## Functionalities Demonstrated
-1. **Purchasing tickets**: 
+**Purchasing tickets**: 
 ![Purchasing tickets](./busticketingkiosk/Readme%20Gifs/PurchaseTickets.gif)
-2. **Refunding tickets successfully**:
-![Refunding tickets successfully](./busticketingkiosk/Readme%20Gifs/RefundTicketsSuccess.gif)   
-3. **Refund tickets error handling**: 
-![Refunding tickets error](./busticketingkiosk/Readme%20Gifs/RefundTicketsError.gif)   
-4. **Route Information and Bus Schedule**: 
-![Route Info Bus Schedule](./busticketingkiosk/Readme%20Gifs/RouteInfoBusSchedule.gif)   
-5. **Changing language/Help Modal**:
+1. Click on Get Started Button on Home Screen
+2. Click on the Select Tickets Button in Dashboard screen
+3. Select the route ```Bowness``` from the Select Route dropdown 
+4. Increment the number of tickets to ```2 for Seniors, Adult, Youth and Child```
+5. Click Next button in the Select Tickets Screen 
+6. Click Purchase Tickets button in the Make Payment Screen 
+7. The user here would tap their card onto the machine at the kiosk and the payment would be processed.
+8. Purchase Successful screen appears and the user can collect their ticket from the kiosk slot below. 
+
+**Refunding tickets successfully**:
+![Refunding tickets successfully](./busticketingkiosk/Readme%20Gifs/RefundTicketsSuccess.gif)
+1. Click on Get Started Button on Home Screen
+2. Click on the Refund Tickets Button in Dashboard screen
+3. Enter a valid reference number ```BER545``` to see the refund success screen
+
+
+**Refund tickets error handling**: 
+![Refunding tickets error](./busticketingkiosk/Readme%20Gifs/RefundTicketsError.gif)
+1. Click on Get Started Button on Home Screen
+2. Click on the Refund Tickets Button in Dashboard screen
+3. Enter an invalid reference number ```JKK9888``` to see the refund error notifications
+    
+**Route Information and Bus Schedule**: 
+![Route Info Bus Schedule](./busticketingkiosk/Readme%20Gifs/RouteInfoBusSchedule.gif)
+1. Click on Get Started Button on Home Screen
+2. Click on the Route Information Button in Dashboard screen
+3. Select the route ```Bowness``` from the Select Route dropdown
+4. Click on ```View Bus Schedule``` button to see the bus schedule for the selected route
+5. Click on the ```Return to Route Information``` button to go back to the Route Information Screen
+6. Click on the ```Back``` button to go back to the Dashboard Screen
+      
+**Changing language/Help Modal**:
 ![Language Feat Help Modal](./busticketingkiosk/Readme%20Gifs/LangFeatHelpModal.gif)   
+1. For changing the language, click on the ```EN``` button for the English language or ```FR``` button for the French language not this can be done on any of the application screens/
+2. Click on the ```Help``` button to see the Help Modal this can be done on any of the application screens.
