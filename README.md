@@ -12,16 +12,19 @@ Dimash these links are for the deployed project:
 ## Project Description
 The bus ticketing system will cater to a diverse user base, spanning various ages, ethnicities, and backgrounds. Given this diversity, the system is designed to be intuitive, user-friendly, and accessible even to those unfamiliar with such interfaces. Emphasis is placed on simplicity, ensuring the system is usable even by non-English speakers.
 
+## Recommneded Screen Size/Resolution
+The recommended screen size is 24 inch monitor screen size and the screen resolution is 1920 x 1080. The application is intended not be responsive for smaller screen sizes.
+
 ## Group Members
-Abhay Khosla 
-Adam Abouelhassan 
-Aminreza Tavakoli Khorassani 
-Hesham Elkaliouby 
-Jay Gurjar 
+- Abhay Khosla 
+- Adam Abouelhassan 
+- Aminreza Tavakoli Khorassani 
+- Hesham Elkaliouby 
+- Jay Gurjar 
 
 ## How to run the project
 1. Clone the repository to your local machine ```git clone https://github.com/Abhay2412/CPSC481FinalProject.git```
-2. Navigate to the project directory ```cd CPSC481FinalProject/busticketingkiosk```
+2. Using a command line interface, navigate to the project directory ```cd CPSC481FinalProject```
 3. Run ```npm install``` to install all the dependencies
 4. Run ```npm start``` to start the project
 5. Open http://localhost:5173 to view it in the browser.
