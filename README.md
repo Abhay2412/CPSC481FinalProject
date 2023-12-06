@@ -12,6 +12,12 @@ Dimash these links are for the deployed project:
 ## Project Description
 The bus ticketing system will cater to a diverse user base, spanning various ages, ethnicities, and backgrounds. Given this diversity, the system is designed to be intuitive, user-friendly, and accessible even to those unfamiliar with such interfaces. Emphasis is placed on simplicity, ensuring the system is usable even by non-English speakers.
 
+## Deliverables
+Readme.md: Can be found in the root level of the project 
+CPSC 481 Bus Ticketing Kiosk Final Portfolio-Group 01.pdf: Can also be found in the root level of the project
+All other previous written deliverables: Can be found in the Reports folder in the root level of the project
+CPSC 481 Final Project Video Demo-Group 01.mp4: The demo video can also be found in the root level of the project. 
+
 ## Recommneded Screen Size/Resolution
 The recommended screen size is 24 inch monitor screen size and the screen resolution is 1920 x 1080. The application is intended not be responsive for smaller screen sizes.
 
@@ -29,7 +35,7 @@ The recommended screen size is 24 inch monitor screen size and the screen resolu
 4. Run ```npm start``` to start the project
 5. Open http://localhost:5173 to view it in the browser.
 
-## Functionalities Demonstrated
+## Functionality Walkthrough Steps
 **Purchasing tickets**: 
 ![Purchasing tickets](./busticketingkiosk/Readme%20Gifs/PurchaseTickets.gif)
 1. Click on Get Started Button on Home Screen
